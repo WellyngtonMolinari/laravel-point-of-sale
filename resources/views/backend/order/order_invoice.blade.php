@@ -54,7 +54,7 @@
             <pre class="font" >
                 Nome da Empresa
                Email:support@email.com <br>
-               Mob: 1245454545 <br>
+               Celular: (35) 9-245454545 <br>
                Rua Marechal Deodoro, 939. Jacutinga - MG. <br>
 
             </pre>
