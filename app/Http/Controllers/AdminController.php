@@ -10,6 +10,8 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Artisan;
+
 
 class AdminController extends Controller
 {
@@ -203,24 +205,48 @@ class AdminController extends Controller
 
     }// End Method 
 
-    public function BackupNow(){
-        \Artisan::call('backup:run');
+        public function BackupNow(Request $request)
+    {
+        try {
+            Artisan::call('backup:run');
 
-          $notification = array(
-            'message' => 'Database Backup Successfully',
-            'alert-type' => 'success'
-        );
+            $notification = [
+                'message' => 'Database Backup Successfully',
+                'alert-type' => 'success'
+            ];
 
-        return redirect()->back()->with($notification);
+            return redirect()->back()->with($notification);
+        } catch (\Exception $e) {
+            // Handle the exception in case of any errors during the backup process
+            $notification = [
+                'message' => 'Backup Failed: ' . $e->getMessage(),
+                'alert-type' => 'error'
+            ];
 
+            return redirect()->back()->with($notification);
+        }
+    }
 
-    }// End Method 
 
 
     public function DownloadDatabase($getFilename){
 
         $path = storage_path('app\TechMindSystem/'.$getFilename);
         return response()->download($path);
+
+    }// End Method 
+
+    public function DeleteDatabase($getFilename){
+
+        Storage::delete('TechMindSystem/'.$getFilename);
+
+         $notification = array(
+            'message' => 'Database Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
 
     }// End Method 
 }   
