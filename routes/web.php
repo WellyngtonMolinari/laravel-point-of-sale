@@ -192,6 +192,8 @@ Route::middleware(['auth'])->group(function()
    
     Route::get('/complete/order','CompleteOrder')->name('complete.order');
     Route::get('/stock','StockManage')->name('stock.manage');
+    
+    Route::get('/order/invoice-download/{order_id}','OrderInvoice');
    });
 }); // End User Middleware
 
