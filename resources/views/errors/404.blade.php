@@ -104,7 +104,7 @@
         <!-- end page -->
 
         <footer class="footer footer-alt">
-            2023 - <script>document.write(new Date().getFullYear())</script> &copy; EeasyLearning <a href="" class="text-white-50"> </a> 
+            2023 - <script>document.write(new Date().getFullYear())</script> &copy; TechMind Systems <a href="" class="text-white-50"> </a> 
         </footer>
 
         <!-- Vendor js -->
