@@ -28,12 +28,12 @@
     }
     .authority h5 {
         margin-top: -10px;
-        color: green;
+        color: purple;
         /*text-align: center;*/
         margin-left: 35px;
     }
     .thanks p {
-        color: green;;
+        color: purple;;
         font-size: 16px;
         font-weight: normal;
         font-family: serif;
@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: purple; font-size: 26px;"><strong>`Nome da Empresa`</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
+                Nome da Empresa
+               Email:support@email.com <br>
                Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+               Rua Marechal Deodoro, 939. Jacutinga - MG. <br>
 
             </pre>
         </td>
@@ -70,23 +70,23 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-           <strong>Customer Name:</strong>   <br>
-           <strong>Customer Email:</strong>   <br>
-           <strong>Customer Phone:</strong>   <br>
+<strong>Customer Name:</strong> {{ $order->customer->name }}  <br>
+<strong>Customer Email:</strong> {{ $order->customer->email }}   <br>
+<strong>Customer Phone:</strong> {{ $order->customer->phone }}   <br>
 
-           <strong>Address:</strong>  
-            <strong>Shop Name:</strong>  
+<strong>Address: {{ $order->customer->address }} </strong>  
+<strong>Shop Name: {{ $order->customer->shopname }} </strong>
 
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #  </h3>
-            Order Date:   <br>
-            Order Status:   <br>
-            Payment Status:   <br>
-            Total Pay :   <br>
-            Total Due :   </span>
+<h3><span style="color: purple;">Invoice:</span> # {{ $order->invoice_no }}  </h3>
+Order Date:  {{ $order->order_date }} <br>
+Order Status:  {{ $order->order_status }} <br>
+Payment Status: {{ $order->payment_status }}  <br>
+Total Pay :  {{ $order->pay }} <br>
+Total Due :  {{ $order->due }} </span>
 
          </p>
         </td>
@@ -97,7 +97,7 @@
 
 
   <table width="100%">
-    <thead style="background-color: green; color:#FFFFFF;">
+    <thead style="background-color: purple; color:#FFFFFF;">
       <tr class="font">
          <th>Image </th>
         <th>Product Name</th>
@@ -112,17 +112,17 @@
      @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-            <img src=" " height="50px;" width="50px;" alt="">
+<img src="{{ public_path($item->product->product_image) }} " height="50px;" width="50px;" alt="">
         </td>
-        <td align="center"> </td>
+        <td align="center"> {{ $item->product->product_name }} </td>
 
-        <td align="center"> </td>
-        <td align="center"> </td>
+        <td align="center"> {{ $item->product->product_code }} </td>
+        <td align="center"> {{ $item->quantity }} </td>
 
 
 
-        <td align="center">$ </td>
-         <td align="center">$ </td>
+        <td align="center">${{ $item->product->selling_price }} </td>
+         <td align="center">$ {{ $item->total }}</td>
       </tr>
       @endforeach
     </tbody>
@@ -131,18 +131,18 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>$ </h2>
-            <h2><span style="color: green;">Total:</span> $ </h2>
-            {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
+<h2><span style="color: purple;">Subtotal:</span>$ {{ $order->total }} </h2>
+<h2><span style="color: purple;">Total:</span> $ {{ $order->total }} </h2>
+            {{-- <h2><span style="color: purple;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>
   <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
+    <p>Agradecemos pela preferênia</p>
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
+      <h5>Assinatura</h5>
     </div>
 </body>
 </html>
