@@ -202,4 +202,25 @@ class AdminController extends Controller
     return view('admin.db_backup')->with('files',File::allFiles(storage_path('/app/TechMindSystem')));
 
     }// End Method 
+
+    public function BackupNow(){
+        \Artisan::call('backup:run');
+
+          $notification = array(
+            'message' => 'Database Backup Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+
+    }// End Method 
+
+
+    public function DownloadDatabase($getFilename){
+
+        $path = storage_path('app\TechMindSystem/'.$getFilename);
+        return response()->download($path);
+
+    }// End Method 
 }   
