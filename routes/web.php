@@ -167,7 +167,7 @@ Route::middleware(['auth'])->group(function()
     });
 
 
-    ///Expense All Route 
+    ///Pos All Route 
     Route::controller(PosController::class)->group(function(){
 
     Route::get('/pos','Pos')->name('pos');
@@ -177,6 +177,15 @@ Route::middleware(['auth'])->group(function()
     Route::get('/cart-remove/{rowId}','CartRemove');
 
     Route::post('/create-invoice','CreateInvoice');
+   
+   
+   });
+
+   ///Order All Route 
+Route::controller(OrderController::class)->group(function(){
+
+    Route::post('/final-invoice','FinalInvoice');
+   
    
    
    });
