@@ -23,7 +23,7 @@ class OrderController extends Controller
         $data['sub_total'] = $request->sub_total;
         $data['vat'] = $request->vat;
 
-        $data['invoice_no'] = 'EPOS'.mt_rand(10000000,99999999);
+        $data['invoice_no'] = 'Test'.mt_rand(10000000,99999999);//invoice prefix
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
@@ -63,6 +63,14 @@ class OrderController extends Controller
         $orders = Order::where('order_status','pending')->get();
         return view('backend.order.pending_order',compact('orders'));
 
+    }// End Method 
+
+
+    public function CompleteOrder(){
+
+        $orders = Order::where('order_status','complete')->get();
+        return view('backend.order.complete_order',compact('orders'));
+    
     }// End Method 
 
 
