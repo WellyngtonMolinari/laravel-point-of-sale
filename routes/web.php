@@ -191,6 +191,7 @@ Route::middleware(['auth'])->group(function()
     Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
    
     Route::get('/complete/order','CompleteOrder')->name('complete.order');
+    Route::get('/stock','StockManage')->name('stock.manage');
    });
 }); // End User Middleware
 
