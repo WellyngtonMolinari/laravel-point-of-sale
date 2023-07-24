@@ -253,7 +253,7 @@
                         </li>
             
                         <li>
-                            <a href="{{ route('all.roles') }}">Add Admin </a>
+                            <a href="{{ route('add.admin') }}">Add Admin </a>
                         </li> 
             
                     </ul>

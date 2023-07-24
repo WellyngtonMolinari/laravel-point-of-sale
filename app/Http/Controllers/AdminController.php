@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class AdminController extends Controller
 {
@@ -109,6 +111,12 @@ class AdminController extends Controller
 
         $alladminuser = User::latest()->get();
         return view('backend.admin.all_admin',compact('alladminuser'));
+    }// End Method 
+
+    public function AddAdmin(){
+
+        $roles = Role::all();
+        return view('backend.admin.add_admin',compact('roles'));
     }// End Method 
 
 
