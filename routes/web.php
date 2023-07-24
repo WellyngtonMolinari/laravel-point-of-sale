@@ -237,6 +237,15 @@ Route::middleware(['auth'])->group(function()
      Route::get('/admin/delete/roles/{id}','AdminDeleteRoles')->name('admin.delete.roles');
    
    });
+
+
+   ///Admin User All Route 
+   Route::controller(AdminController::class)->group(function(){
+
+    Route::get('/all/admin','AllAdmin')->name('all.admin');
+   
+   
+   });
    
 
 }); // End User Middleware
