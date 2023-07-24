@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -195,5 +196,14 @@ Route::middleware(['auth'])->group(function()
     
     Route::get('/order/invoice-download/{order_id}','OrderInvoice');
    });
+
+   ///Permission All Route
+   Route::controller(RoleController::class)->group(function(){
+
+    Route::get('/all/permission','AllPermission')->name('all.permission');
+   
+   
+   });
+
 }); // End User Middleware
 
