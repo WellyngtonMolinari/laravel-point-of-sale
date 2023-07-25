@@ -214,7 +214,7 @@
 </li>
 
 <li>
-    {{-- <a href="{{ route('pending.due') }}">Pending Due </a> --}}
+    <a href="{{ route('pending.due') }}">Pending Due </a>
 </li>
 
 

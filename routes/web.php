@@ -183,7 +183,7 @@ Route::middleware(['auth'])->group(function()
    });
 
    ///Order All Route 
-    Route::controller(OrderController::class)->group(function(){
+   Route::controller(OrderController::class)->group(function(){
 
     Route::post('/final-invoice','FinalInvoice');
     Route::get('/pending/order','PendingOrder')->name('pending.order');
@@ -195,6 +195,10 @@ Route::middleware(['auth'])->group(function()
     Route::get('/stock','StockManage')->name('stock.manage');
     
     Route::get('/order/invoice-download/{order_id}','OrderInvoice');
+
+    //// Due All Route 
+
+    Route::get('/pending/due','PendingDue')->name('pending.due');
    });
 
    ///Permission All Route
