@@ -36,25 +36,27 @@
                 <li class="menu-title mt-2">Apps</li>
 
                
-@if(Auth::user()->can('employee.menu'))
+@if(Auth::user()->can('orders.menu'))
 <li>
-<a href="#sidebarEcommerce" data-bs-toggle="collapse">
-    <i class="fas fa-users"></i>
-<span> Employee Manage  </span>
+<a href="#orders" data-bs-toggle="collapse">
+    <i class="fas fa-file-alt"></i>
+<span> Orders  </span>
 <span class="menu-arrow"></span>
 </a>
-<div class="collapse" id="sidebarEcommerce">
+<div class="collapse" id="orders">
 <ul class="nav-second-level">
-    @if(Auth::user()->can('employee.all'))
+<li>
+    <a href="{{ route('pending.order') }}">Pending Orders </a>
+</li>
+
     <li>
-        <a href="{{ route('all.employee') }}"><i data-feather="users" class="icons-xs mdi mdi-account-multiple-outline "></i>     All Employee</a>
-    </li>
-    @endif
-    @if(Auth::user()->can('employee.add'))
-    <li>
-        <a href="{{ route('add.employee') }}"><i data-feather="user-plus" class="icons-xs icon-dual-success"></i>     Add Employee </a>
-    </li>
-   @endif
+    <a href="{{ route('complete.order') }}">Complete Orders </a>
+</li>
+
+<li>
+    <a href="{{ route('pending.due') }}">Pending Due </a>
+</li>
+
 </ul>
 </div>
 </li>
@@ -106,6 +108,32 @@
 </li>
 @endif
 
+
+@if(Auth::user()->can('employee.menu'))
+<li>
+<a href="#sidebarEcommerce" data-bs-toggle="collapse">
+    <i class="fas fa-users"></i>
+<span> Employee Manage  </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="sidebarEcommerce">
+<ul class="nav-second-level">
+    @if(Auth::user()->can('employee.all'))
+    <li>
+        <a href="{{ route('all.employee') }}"><i data-feather="users" class="icons-xs mdi mdi-account-multiple-outline "></i>     All Employee</a>
+    </li>
+    @endif
+    @if(Auth::user()->can('employee.add'))
+    <li>
+        <a href="{{ route('add.employee') }}"><i data-feather="user-plus" class="icons-xs icon-dual-success"></i>     Add Employee </a>
+    </li>
+   @endif
+</ul>
+</div>
+</li>
+@endif
+
+
 @if(Auth::user()->can('salary.menu'))
 <li>
 <a href="#salary" data-bs-toggle="collapse">
@@ -154,11 +182,13 @@
 </li>
 
 @endif
+
+
 @if(Auth::user()->can('category.menu'))
 <li>
 <a href="#category" data-bs-toggle="collapse">
     <i class="mdi mdi-layers-outline"></i>
-    <span> Category </span>
+    <span>Products Category </span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="category">
@@ -171,6 +201,8 @@
 </div>
 </li>
 @endif
+
+
 @if(Auth::user()->can('product.menu'))
 <li>
 <a href="#product" data-bs-toggle="collapse">
@@ -194,34 +226,8 @@
     </ul>
 </div>
 </li>
-
 @endif
-@if(Auth::user()->can('orders.menu'))
-<li>
-<a href="#orders" data-bs-toggle="collapse">
-    <i class="fas fa-file-alt"></i>
-<span> Orders  </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="orders">
-<ul class="nav-second-level">
-<li>
-    <a href="{{ route('pending.order') }}">Pending Orders </a>
-</li>
 
- <li>
-    <a href="{{ route('complete.order') }}">Complete Orders </a>
-</li>
-
-<li>
-    <a href="{{ route('pending.due') }}">Pending Due </a>
-</li>
-
-
-</ul>
-</div>
-</li>
-@endif
 @if(Auth::user()->can('stock.menu'))
 <li>
 <a href="#stock" data-bs-toggle="collapse">
@@ -240,6 +246,8 @@
 </div>
 </li>
 @endif
+
+
 @if(Auth::user()->can('roles.menu'))
 <li>
 <a href="#permission" data-bs-toggle="collapse">
