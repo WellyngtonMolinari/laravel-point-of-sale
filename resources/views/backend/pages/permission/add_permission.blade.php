@@ -60,6 +60,7 @@
             <select name="group_name" class="form-select" id="example-select">
                     <option selected disabled >Select Group  </option>
 
+        <option value="admin">Admin</option>
         <option value="pos"> Pos</option>
         <option value="employee"> Employee</option>
         <option value="customer"> Customer</option>
