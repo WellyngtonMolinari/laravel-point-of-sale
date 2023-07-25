@@ -233,9 +233,6 @@
                 selling_price: {
                     required : true,
                 }, 
-                product_image: {
-                    required : true,
-                },  
             },
             messages :{
                 product_name: {
@@ -268,9 +265,6 @@
                 selling_price: {
                     required : 'Please Enter Selling Price',
                 },
-                product_image: {
-                    required : 'Please Select Product Image',
-                }, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
