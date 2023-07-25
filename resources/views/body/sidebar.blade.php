@@ -187,7 +187,7 @@
 @if(Auth::user()->can('category.menu'))
 <li>
 <a href="#category" data-bs-toggle="collapse">
-    <i class="mdi mdi-layers-outline"></i>
+    <i class="fas fa-list-alt"></i>
     <span>Products Category </span>
     <span class="menu-arrow"></span>
 </a>
