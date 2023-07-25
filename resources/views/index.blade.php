@@ -178,158 +178,163 @@
                                             </div>
                                         </div>
     
-                                        <h4 class="header-title mb-3">Revenue History</h4>
-    
-                                        <div class="table-responsive">
-                                            <table class="table table-borderless table-nowrap table-hover table-centered m-0">
-    
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th>Marketplaces</th>
-                                                        <th>Date</th>
-                                                        <th>Payouts</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Themes Market</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 15, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $5848.68
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Freelance</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 12, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $1247.25
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Share Holding</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 10, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $815.89
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Envato's Affiliates</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 03, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $248.75
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-danger text-danger">Overdue</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Marketing Revenue</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Sep 21, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $978.21
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Sep 15, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $358.10
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end .table-responsive-->
-                                    </div>
-                                </div> <!-- end card-->
+{{-- @php
+    $pendingOrders = App\Models\Order::where('order_status', 'pending')->get();
+    $completeOrders = App\Models\Order::where('order_status', 'complete')->get();
+    $pendingDue = App\Models\Order::sum('due');
+@endphp --}}
+        <h4 class="header-title mb-3">Revenue History</h4>
+
+<div class="table-responsive">
+    <table class="table table-borderless table-nowrap table-hover table-centered m-0">
+
+        <thead class="table-light">
+            <tr>
+                <th>Marketplaces</th>
+                <th>Date</th>
+                <th>Payouts</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Themes Market</h5>
+                </td>
+
+                <td>
+                    Oct 15, 2018
+                </td>
+
+                <td>
+                    $5848.68
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-warning text-warning">Upcoming</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Freelance</h5>
+                </td>
+
+                <td>
+                    Oct 12, 2018
+                </td>
+
+                <td>
+                    $1247.25
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-success text-success">Paid</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Share Holding</h5>
+                </td>
+
+                <td>
+                    Oct 10, 2018
+                </td>
+
+                <td>
+                    $815.89
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-success text-success">Paid</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Envato's Affiliates</h5>
+                </td>
+
+                <td>
+                    Oct 03, 2018
+                </td>
+
+                <td>
+                    $248.75
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-danger text-danger">Overdue</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Marketing Revenue</h5>
+                </td>
+
+                <td>
+                    Sep 21, 2018
+                </td>
+
+                <td>
+                    $978.21
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-warning text-warning">Upcoming</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h5 class="m-0 fw-normal">Advertise Revenue</h5>
+                </td>
+
+                <td>
+                    Sep 15, 2018
+                </td>
+
+                <td>
+                    $358.10
+                </td>
+
+                <td>
+                    <span class="badge bg-soft-success text-success">Paid</span>
+                </td>
+
+                <td>
+                    <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+            </table>
+        </div> <!-- end .table-responsive-->
+                    </div>
+                </div> <!-- end card-->
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
