@@ -45,6 +45,7 @@
                         </div>     
                         <!-- end page title --> 
 
+@if(Auth::user()->can('admin.menu'))
 <div class="row">
     <div class="col-md-6 col-xl-3">
         <div class="widget-rounded-circle card">
@@ -128,6 +129,7 @@
     </div> <!-- end col-->
 
 </div>
+@endif
                         <!-- end row-->
 
                         <div class="row">
