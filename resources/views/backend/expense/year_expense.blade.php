@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.expense') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Expense </a>  
+      <a href="{{ route('add.expense') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Despesas </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Year Expense</h4>
+                                    <h4 class="page-title">Despesas Anuais</h4>
                                 </div>
                             </div>
                         </div>     
@@ -34,15 +34,15 @@
             <div class="card">
                 <div class="card-body">
 
-           <h4 class="header-title"> Year Expense </h4>   
+           <h4 class="header-title"> Despesas do ano </h4>   
            <h4 style="color:rgb(0, 0, 0); font-size: 30px;" align="center"> Total : ${{ $expenseyear }}</h4>      
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Year</th>  
+                                <th>ID</th>
+                                <th>Detalhes</th>
+                                <th>Quantia</th>
+                                <th>Ano</th>  
                             </tr>
                         </thead>
 

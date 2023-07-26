@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.expense') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Expense </a>  
+      <a href="{{ route('add.expense') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Despesas </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Today Expense</h4>
+                                    <h4 class="page-title">Despesas do dia</h4>
                                 </div>
                             </div>
                         </div>     
@@ -34,17 +34,17 @@
             <div class="card">
                 <div class="card-body">
 
-           <h4 class="header-title"> Today Expense </h4>   
+           <h4 class="header-title">Despesas do dia </h4>   
            <h4 style="color:rgb(0, 0, 0); font-size: 30px;" align="center"> Total : ${{ $expense }}</h4>      
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Month</th>
-                                <th>Year</th> 
-                                <th>Action</th>
+                                <th>ID</th>
+                                <th>Detalhes</th>
+                                <th>Quantia</th>
+                                <th>Mês</th>
+                                <th>Ano</th> 
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -58,7 +58,7 @@
                 <td>{{ $item->month }}</td>
                 <td>{{ $item->year }}</td> 
                 <td>
-<a href="{{ route('edit.expense',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a> 
+<a href="{{ route('edit.expense',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a> 
 
                 </td>
             </tr>
