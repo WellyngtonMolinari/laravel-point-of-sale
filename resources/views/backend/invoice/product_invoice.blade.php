@@ -57,9 +57,7 @@
                     </div><!-- end col -->
                     <div class="col-md-4 offset-md-2">
                         <div class="mt-3 float-end">
-                            <p><strong>Data do pedido : </strong> <span class="float-end"> &nbsp;&nbsp;&nbsp;&nbsp; Jan 17, 2016</span></p>
-                            <p><strong>Estado do pedido : </strong> <span class="float-end"><span class="badge bg-danger">Não pago</span></span></p>
-                            <p><strong>Pedido n : </strong> <span class="float-end">0028 </span></p>
+                            <p><strong>Data do pedido: </strong> <span class="float-end">{{ date('d/m/y') }}</span></p>
                         </div>
                     </div><!-- end col -->
                 </div>
