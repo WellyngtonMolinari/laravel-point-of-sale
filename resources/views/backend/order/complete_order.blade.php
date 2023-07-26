@@ -15,7 +15,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Complete Orders</h4>
+                                    <h4 class="page-title">Pedidos Confirmados</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,15 +30,15 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Order Date</th>
-                                <th>Payment</th>
-                                <th>Invoice</th>
-                                <th>Pay</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Data do Pedido</th>
+                                <th>Pagamento</th>
+                                <th>Cobrança</th>
+                                <th>Valor</th>
+                                <th>Estado</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -55,7 +55,7 @@
                 <td>{{ $item->pay }}</td>
                 <td> <span class="badge bg-success">{{ $item->order_status }}</span> </td>
                 <td>
-<a href="{{ url('order/invoice-download/'.$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> PDF Invoice </a>
+<a href="{{ url('order/invoice-download/'.$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> PDF </a>
 
                 </td>
             </tr>

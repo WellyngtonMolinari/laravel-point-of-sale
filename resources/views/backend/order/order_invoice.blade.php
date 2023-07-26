@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Invoice</title>
+<title>Comprovante de Pagamento</title>
 
 <style type="text/css">
     * {
@@ -70,41 +70,36 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-<strong>Customer Name:</strong> {{ $order->customer->name }}  <br>
-<strong>Customer Email:</strong> {{ $order->customer->email }}   <br>
-<strong>Customer Phone:</strong> {{ $order->customer->phone }}   <br>
+<strong>Nome do Cliente:</strong> {{ $order->customer->name }}  <br>
+<strong>Email do Cliente:</strong> {{ $order->customer->email }}   <br>
+<strong>Celular do Cliente:</strong> {{ $order->customer->phone }}   <br>
 
-<strong>Address: {{ $order->customer->address }} </strong>  
-<strong>Shop Name: {{ $order->customer->shopname }} </strong>
+<strong>Endereço: {{ $order->customer->address }} </strong>  
 
          </p>
         </td>
         <td>
           <p class="font">
-<h3><span style="color: purple;">Invoice:</span> # {{ $order->invoice_no }}  </h3>
-Order Date:  {{ $order->order_date }} <br>
-Order Status:  {{ $order->order_status }} <br>
-Payment Status: {{ $order->payment_status }}  <br>
-Total Pay :  {{ $order->pay }} <br>
-Total Due :  {{ $order->due }} </span>
+<h3><span style="color: purple;">Código:</span> # {{ $order->invoice_no }}  </h3>
+Data do Pedido:  {{ $order->order_date }} <br>
 
          </p>
         </td>
     </tr>
   </table>
   <br/>
-<h3>Products</h3>
+<h3>Produtos</h3>
 
 
   <table width="100%">
     <thead style="background-color: purple; color:#FFFFFF;">
       <tr class="font">
-         <th>Image </th>
-        <th>Product Name</th>
-        <th>Product Code</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Total(+Vat)</th>
+         <th>Imagem </th>
+        <th>Nome do Produto</th>
+        <th>Código do Produto</th>
+        <th>Quantidade</th>
+        <th>Preço</th>
+        <th>Total(+Taxa)</th>
       </tr>
     </thead>
     <tbody>
@@ -131,8 +126,8 @@ Total Due :  {{ $order->due }} </span>
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-<h2><span style="color: purple;">Subtotal:</span>$ {{ $order->total }} </h2>
-<h2><span style="color: purple;">Total:</span> $ {{ $order->total }} </h2>
+<h2><span style="color: purple;">Subtotal:</span> R${{ $order->total }} </h2>
+<h2><span style="color: purple;">Total:</span> R${{ $order->total }} </h2>
             {{-- <h2><span style="color: purple;">Full Payment PAID</h2> --}}
         </td>
     </tr>

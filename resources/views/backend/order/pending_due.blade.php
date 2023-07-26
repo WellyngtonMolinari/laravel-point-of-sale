@@ -15,7 +15,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Pending Due</h4>
+                                    <h4 class="page-title">Pedidos A Receber</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,15 +30,15 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Order Date</th>
-                                <th>Payment</th>
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Data do Pedido</th>
+                                <th>Pagamento</th>
                                 <th>Total</th>
-                                <th>Pay</th>
-                                <th>Due</th>
-                                <th>Action</th>
+                                <th>Valor Pago</th>
+                                <th>Dívida</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
 
@@ -52,12 +52,12 @@
                 <td>{{ $item->order_date }}</td>
                 <td>{{ $item->payment_status }}</td>
                 <td> <span class="btn btn-info waves-effect waves-light"> {{  $item->total  }}</span> </td>
-                <td> <span class="btn btn-warning waves-effect waves-light"> {{ round($item->pay) }}</span> </td>
+                <td> <span class="btn btn-success waves-effect waves-light"> {{ round($item->pay) }}</span> </td>
                 <td> <span class="btn btn-danger waves-effect waves-light"> {{ round($item->due) }}</span> </td>
                 <td>
-<a href="{{ route('order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Details </a>
+<a href="{{ route('order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Detalhes </a>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal" id="{{ $item->id }}" onclick="orderDue(this.id)" >Pay Due </button> 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal" id="{{ $item->id }}" onclick="orderDue(this.id)" >Pagar Dívida </button> 
 
                 </td>
             </tr>
@@ -87,7 +87,7 @@
                 <div class="text-center mt-2 mb-4 ">
                         <div class="auth-logo">
 
-                            <h3> Pay Due Amount </h3>
+                            <h3> Pagar Quantia Devida </h3>
                         </div>
                 </div>
 
@@ -100,13 +100,13 @@
     <input type="hidden" name="pay" id="pay">
 
        <div class="mb-3">
-             <label for="username" class="form-label">Pay Now</label>
+             <label for="username" class="form-label">Pagar Agora</label>
      <input class="form-control" type="text" name="due" id="due"  >
           </div>
 
 
                     <div class="mb-3 text-center">
-     <button class="btn btn-primary" type="submit">Update Due  </button>
+     <button class="btn btn-primary" type="submit">Atualizar  </button>
                     </div>
 
                 </form>
