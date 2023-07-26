@@ -39,7 +39,7 @@
                                             </a>
                                         </form>
                                     </div>
-                                    <h4 class="page-title">Dashboard</h4>
+                                    <h4 class="page-title">Histórico</h4>
                                 </div>
                             </div>
                         </div>     
@@ -59,7 +59,7 @@
                     <div class="col-6">
                         <div class="text-end">
                             <h3 class="text-dark mt-1">$<span data-plugin="counterup">{{ $total_paid }}</span></h3>
-                            <p class="text-muted mb-1 text-truncate">Total Paids </p>
+                            <p class="text-muted mb-1 text-truncate">Recebidos </p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -79,7 +79,7 @@
                     <div class="col-6">
                         <div class="text-end">
                             <h3 class="text-dark mt-1">$<span data-plugin="counterup">{{ $total_due  }}</span></h3>
-                            <p class="text-muted mb-1 text-truncate">Total Due </p>
+                            <p class="text-muted mb-1 text-truncate">A receber</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -100,7 +100,7 @@
                     <div class="col-6">
                     <div class="text-end">
                             <h3 class="text-dark mt-1"> <span data-plugin="counterup">{{ count($pendingorder)  }}</span></h3>
-                            <p class="text-muted mb-1 text-truncate">Pending Order </p>
+                            <p class="text-muted mb-1 text-truncate">Pedidos</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -120,7 +120,7 @@
                     <div class="col-6">
                     <div class="text-end">
                             <h3 class="text-dark mt-1"> <span data-plugin="counterup">{{ count($completeorder)  }}</span></h3>
-                            <p class="text-muted mb-1 text-truncate">Complete Order </p>
+                            <p class="text-muted mb-1 text-truncate">Finalizados </p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -140,13 +140,13 @@
                                     <div class="card-body pb-2">
                                         <div class="float-end d-none d-md-inline-block">
                                             <div class="btn-group mb-2">
-                                                <button type="button" class="btn btn-xs btn-light">Today</button>
-                                                <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                                <button type="button" class="btn btn-xs btn-secondary">Monthly</button>
+                                                <button type="button" class="btn btn-xs btn-light">Hoje</button>
+                                                <button type="button" class="btn btn-xs btn-light">Semana</button>
+                                                <button type="button" class="btn btn-xs btn-secondary">Mês</button>
                                             </div>
                                         </div>
     
-                                        <h4 class="header-title mb-3">Sales Analytics</h4>
+                                        <h4 class="header-title mb-3">Gráfico</h4>
 
                                         <!-- Graphics -->
                                         <div dir="ltr">
@@ -185,18 +185,18 @@
     $completeOrders = App\Models\Order::where('order_status', 'complete')->get();
     $pendingDue = App\Models\Order::sum('due');
 @endphp --}}
-        <h4 class="header-title mb-3">Revenue History</h4>
+        <h4 class="header-title mb-3">Últimas transações</h4>
 
 <div class="table-responsive">
     <table class="table table-borderless table-nowrap table-hover table-centered m-0">
 
         <thead class="table-light">
             <tr>
-                <th>Marketplaces</th>
-                <th>Date</th>
-                <th>Payouts</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Clientes</th>
+                <th>Data</th>
+                <th>Pagamentos</th>
+                <th>Estado</th>
+                <th>Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -214,7 +214,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-warning text-warning">Upcoming</span>
+                    <span class="badge bg-soft-warning text-warning">Em andamento</span>
                 </td>
 
                 <td>
@@ -236,7 +236,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-success text-success">Paid</span>
+                    <span class="badge bg-soft-success text-success">Pago</span>
                 </td>
 
                 <td>
@@ -258,7 +258,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-success text-success">Paid</span>
+                    <span class="badge bg-soft-success text-success">Pago</span>
                 </td>
 
                 <td>
@@ -280,7 +280,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-danger text-danger">Overdue</span>
+                    <span class="badge bg-soft-danger text-danger">Não pago</span>
                 </td>
 
                 <td>
@@ -302,7 +302,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-warning text-warning">Upcoming</span>
+                    <span class="badge bg-soft-warning text-warning">Em andamento</span>
                 </td>
 
                 <td>
@@ -324,7 +324,7 @@
                 </td>
 
                 <td>
-                    <span class="badge bg-soft-success text-success">Paid</span>
+                    <span class="badge bg-soft-success text-success">Pago</span>
                 </td>
 
                 <td>

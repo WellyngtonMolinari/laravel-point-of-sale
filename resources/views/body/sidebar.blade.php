@@ -10,12 +10,12 @@
 
             <ul id="side-menu">
 
-                <li class="menu-title">Navigation</li>
+                <li class="menu-title">Navegação</li>
     
 <li>
 <a href="{{ url('/dashboard') }}">
     <i class="mdi mdi-poll "></i>
-    <span> Dashboards </span>
+    <span> Gráfico </span>
 </a>
 </li>
 
@@ -25,7 +25,7 @@
 <a href="{{ route('pos') }}">
     <span class="badge bg-pink float-end">Hot</span>
     <i data-feather="shopping-cart" class="icon-dual-danger"></i>
-    <span> Vender </span>
+    <span> Criar pedido </span>
 </a>
 </li>
 @endif
@@ -33,28 +33,28 @@
 
 
 
-                <li class="menu-title mt-2">Apps</li>
+                <li class="menu-title mt-2">Funções</li>
 
                
 @if(Auth::user()->can('orders.menu'))
 <li>
 <a href="#orders" data-bs-toggle="collapse">
     <i class="fas fa-file-alt"></i>
-<span> Orders  </span>
+<span> Pedidos  </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="orders">
 <ul class="nav-second-level">
 <li>
-    <a href="{{ route('pending.order') }}">Pending Orders </a>
+    <a href="{{ route('pending.order') }}">Pedidos Em Andamento</a>
 </li>
 
     <li>
-    <a href="{{ route('complete.order') }}">Complete Orders </a>
+    <a href="{{ route('complete.order') }}">Pedidos Finalizados</a>
 </li>
 
 <li>
-    <a href="{{ route('pending.due') }}">Pending Due </a>
+    <a href="{{ route('pending.due') }}">Pedidos A Receber</a>
 </li>
 
 </ul>
