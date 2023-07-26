@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
@@ -22,26 +23,33 @@ class CustomerController extends Controller
    } // End Method 
 
 
-    public function StoreCustomer(Request $request){
-
-       $validateData = $request->validate([
+   public function StoreCustomer(Request $request)
+   {
+       $validator = Validator::make($request->all(), [
            'name' => 'required|max:200',
            'email' => 'required|unique:customers|max:200',
            'phone' => 'required|max:200',
            'address' => 'required|max:400',
            'shopname' => 'required|max:200',
-           'account_holder' => 'required|max:200', 
-           'account_number' => 'required', 
-           'image' => 'required',  
+           'account_holder' => 'required|max:200',
+           'account_number' => 'required',
+           'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Remove 'required'
        ]);
-
-       $image = $request->file('image');
-       $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-       Image::make($image)->resize(300,300)->save('upload/customer/'.$name_gen);
-       $save_url = 'upload/customer/'.$name_gen;
-
-       Customer::insert([
-
+   
+       if ($validator->fails()) {
+           return redirect()->back()->withErrors($validator)->withInput();
+       }
+   
+       $save_url = null;
+   
+       if ($request->hasFile('image')) {
+           $image = $request->file('image');
+           $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+           Image::make($image)->resize(300, 300)->save('upload/customer/' . $name_gen);
+           $save_url = 'upload/customer/' . $name_gen;
+       }
+   
+       Customer::create([
            'name' => $request->name,
            'email' => $request->email,
            'phone' => $request->phone,
@@ -53,18 +61,17 @@ class CustomerController extends Controller
            'bank_branch' => $request->bank_branch,
            'city' => $request->city,
            'image' => $save_url,
-           'created_at' => Carbon::now(), 
-
+           'created_at' => Carbon::now(),
        ]);
-
-        $notification = array(
+   
+       $notification = [
            'message' => 'Customer Inserted Successfully',
-           'alert-type' => 'success'
-       );
-
-       return redirect()->route('all.customer')->with($notification); 
-   } // End Method 
-
+           'alert-type' => 'success',
+       ];
+   
+       return redirect()->route('all.customer')->with($notification);
+   }
+   
    public function EditCustomer($id){
 
     $customer = Customer::findOrFail($id);
