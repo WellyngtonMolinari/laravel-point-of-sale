@@ -15,7 +15,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Employee Attendence</h4>
+                                    <h4 class="page-title">Registro de Ponto</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,11 +30,11 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Attend Status</th> 
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Estado</th> 
                             </tr>
                         </thead>
 

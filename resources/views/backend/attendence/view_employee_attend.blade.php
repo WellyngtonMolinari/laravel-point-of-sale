@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.employee.attend') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee Attendance  </a>  
+      <a href="{{ route('add.employee.attend') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Ponto </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Employee Attendance</h4>
+                                    <h4 class="page-title">Registro de Ponto</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,9 +30,9 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th> 
-                                <th>Date</th>
-                                <th>Action</th>
+                                <th>ID</th> 
+                                <th>Data</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -43,8 +43,8 @@
                 <td>{{ $key+1 }}</td> 
                 <td>{{ date('Y-m-d', strtotime($item->date))  }}</td>
                 <td>
-<a href="{{ route('employee.attend.edit',$item->date) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('employee.attend.view',$item->date) }}" class="btn btn-danger rounded-pill waves-effect waves-light" >View</a>
+<a href="{{ route('employee.attend.edit',$item->date) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+<a href="{{ route('employee.attend.view',$item->date) }}" class="btn btn-success rounded-pill waves-effect waves-light" >Detalhes</a>
 
                 </td>
             </tr>

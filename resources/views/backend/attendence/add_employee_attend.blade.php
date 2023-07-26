@@ -34,7 +34,7 @@
                      <h4>
 
 
-                        <a href="{{ route('employee.attend.list') }}" class="btn btn-primary float-sm-right"> <i class="fas fa-list"></i>Employee Attendance List</a>
+                        <a href="{{ route('employee.attend.list') }}" class="btn btn-primary float-sm-right"> <i class="fas fa-list"></i>  Registro de Ponto</a>
                      </h4>
                   </ol>
                </div>
@@ -53,20 +53,20 @@
                 <form action="{{ route('employee.attend.store') }}" method="post" id="myForm">
                      @csrf
                      <div class="form-group col-md-4">
-                        <label for="date" class="control-label">Attendance Date</label>
+                        <label for="date" class="control-label">Data de Presença</label>
                         <input type="date" name="date" id="date" class="checkdate form-control form-control-sm singledatepicker" placeholder="Attendance Date" autocomplete="off">
                      </div>
                      <table class="table sm table-bordered table-striped dt-responsive" style="width: 100%">
                         <thead>
                            <tr>
-                              <th rowspan="2" class="text-center" style="vertical-align: middle">Sl.</th>
-                              <th rowspan="2" class="text-center" style="vertical-align: middle">Employee Name</th>
-                              <th colspan="3" class="text-center" style="vertical-align: middle">Attendance Status</th>
+                              <th rowspan="2" class="text-center" style="vertical-align: middle">ID</th>
+                              <th rowspan="2" class="text-center" style="vertical-align: middle">Nome Funcionário</th>
+                              <th colspan="3" class="text-center" style="vertical-align: middle">Estado de Presença</th>
                            </tr>
                            <tr>
-                              <th class="text-center btn present_all" style="display: table-cell;background-color:#68ff68">Present</th>
-                              <th class="text-center btn leave_all" style="display: table-cell;background-color:#43c0ff">Leave</th>
-                              <th class="text-center btn absent_all" style="display: table-cell;background-color:#ff4242">Absent</th>
+                              <th class="text-center btn present_all" style="display: table-cell;background-color:#68ff68">Presente</th>
+                              <th class="text-center btn leave_all" style="display: table-cell;background-color:#43c0ff">    Saiu</th>
+                              <th class="text-center btn absent_all" style="display: table-cell;background-color:#ff4242">  Ausente</th>
                            </tr>
                         </thead>
     <tbody>
@@ -79,13 +79,13 @@
              <div class="switch-toggle switch-3 switch-candy">
                 <input class="present" id="present{{$key}}" name="attend_status{{$key}}" value="present" type="radio" checked="checked">
 
-                <label for="present{{$key}}">Present</label>
+                <label for="present{{$key}}">Presente</label>
                 <input class="leave" id="leave{{$key}}" name="attend_status{{$key}}" value="Leave" type="radio">
 
-                <label for="leave{{$key}}">Leave</label>
+                <label for="leave{{$key}}">Saiu</label>
                 <input class="absent" id="absent{{$key}}" name="attend_status{{$key}}" value="Absent" type="radio">
 
-                <label for="absent{{$key}}">Absent</label>
+                <label for="absent{{$key}}">Ausente</label>
                 <a></a>
              </div>
           </td>
@@ -93,7 +93,7 @@
        @endforeach
     </tbody>
  </table>
- <button type="submit" class="btn btn-success btn-sm"> Submit </button>
+ <button type="submit" class="btn btn-success btn-sm"> Cadastrar </button>
 </form>
 </div>
                <!-- end card body-->
