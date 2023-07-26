@@ -168,7 +168,7 @@
 <li>
 <a href="#attendence" data-bs-toggle="collapse">
     <i class="fas fa-map-marker-alt"></i>
-    <span> Ponto de presença </span>
+    <span> Ponto de Presença </span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="attendence">
@@ -188,7 +188,7 @@
 <li>
 <a href="#category" data-bs-toggle="collapse">
     <i class="fas fa-list-alt"></i>
-    <span>Categoria de produtos</span>
+    <span>Categoria de Produtos</span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="category">
