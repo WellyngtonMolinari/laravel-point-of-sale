@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Logout | TechMind Systems</title>
+        <title>Sair | TechMind Systems</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -60,9 +60,9 @@
                                         </div>
                                     </div>
 
-                                    <h3>See you again !</h3>
+                                    <h3>Te vejo em breve !</h3>
 
-                                    <p class="text-muted"> You are now successfully sign out. </p>
+                                    <p class="text-muted"> Você saiu com sucesso! </p>
                                 </div>
 
                             </div> <!-- end card-body -->

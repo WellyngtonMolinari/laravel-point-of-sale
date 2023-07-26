@@ -13,11 +13,11 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Admin Profile</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Perfil Administrador</a></li>
                                         
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Profile</h4>
+                                <h4 class="page-title">Perfil</h4>
                             </div>
                         </div>
                     </div>     
@@ -33,14 +33,14 @@
                     <h4 class="mb-0">{{ $adminData->name }}</h4>
                     <p class="text-muted">{{ $adminData->email }}</p>
 
-                    <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
-                    <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">Message</button>
+                    <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Seguir</button>
+                    <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">Mensagem</button>
 
                     <div class="text-start mt-3">
                         
-                        <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ms-2">{{ $adminData->name }}</span></p>
+                        <p class="text-muted mb-2 font-13"><strong>Nome Completo :</strong> <span class="ms-2">{{ $adminData->name }}</span></p>
                     
-                        <p class="text-muted mb-2 font-13"><strong>Phone :</strong><span class="ms-2">{{ $adminData->phone }}</span></p>
+                        <p class="text-muted mb-2 font-13"><strong>Celular :</strong><span class="ms-2">{{ $adminData->phone }}</span></p>
                     
                         <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">{{ $adminData->email }}</span></p>
                     
@@ -83,7 +83,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="firstname" class="form-label">First Name</label>
+                            <label for="firstname" class="form-label">Primeiro Nome</label>
                             <input type="text" name="name" class="form-control" id="firstname" value="{{ $adminData->name }}" >
                         </div>
                     </div>
@@ -95,14 +95,14 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="lastname" class="form-label">Phone</label>
+                            <label for="lastname" class="form-label">Celular</label>
                             <input type="text" name="phone" class="form-control" id="lastname" value="{{ $adminData->phone }}">
                         </div>
                     </div> <!-- end col -->
 
 <div class="col-md-12">                    
     <div class="mb-3">
-        <label for="example-fileinput" class="form-label">Admin Profile Image</label>
+        <label for="example-fileinput" class="form-label">Imagem de perfil</label>
         <input type="file" name="photo" id="image" class="form-control">
     </div>
 </div> <!-- end col -->

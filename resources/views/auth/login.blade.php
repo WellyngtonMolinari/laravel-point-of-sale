@@ -46,14 +46,14 @@
                             </span>
                         </a>
                     </div>
-                    <p class="text-muted mb-4 mt-3">Enter your credentials to access admin panel.</p>
+                    <p class="text-muted mb-4 mt-3">Insira suas credenciais para acessar o Sistema</p>
                 </div>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
             <div class="mb-3">
-                <label for="login" class="form-label">Email/Name/Phone</label>
+                <label for="login" class="form-label">Email/Nome/Celular</label>
 
                 <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Enter your login">
 @error('login')
@@ -62,7 +62,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Senha</label>
                 <div class="input-group input-group-merge">
                     <input type="password" id="password" name="password" class="form-control @error('login') is-invalid @enderror" placeholder="Enter your password">
 @error('password')
@@ -77,12 +77,12 @@
             <div class="mb-3">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                    <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                    <label class="form-check-label" for="checkbox-signin">Lembrar-me</label>
                 </div>
             </div>
 
             <div class="text-center d-grid">
-                <button class="btn btn-primary" type="submit"> Log In </button>
+                <button class="btn btn-primary" type="submit"> Entrar </button>
             </div>
 
         </form>

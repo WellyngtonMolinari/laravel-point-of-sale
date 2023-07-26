@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ url('backup/now') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Backup Now </a>  
+      <a href="{{ url('backup/now') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Backup Agora </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Backup</h4>
+                                    <h4 class="page-title">Todos Backup</h4>
                                 </div>
                             </div>
                         </div>     
@@ -31,10 +31,10 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>File Name </th>
-                                <th>Size </th>
-                                <th>Path</th> 
-                                <th>Action</th>
+                                <th>Nome do Arquivo </th>
+                                <th>Tamanho </th>
+                                <th>Endereço</th> 
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -50,7 +50,7 @@
 
 <a href="{{ url($item->getFilename()) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Download </a> 
 
-<a href="{{ url('delete/database/'.$item->getFilename()) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ url('delete/database/'.$item->getFilename()) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 
                 </td>
             </tr>

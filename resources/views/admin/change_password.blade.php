@@ -13,11 +13,11 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Change Password</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Mudar Senha</a></li>
                                         
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Change Password</h4>
+                                <h4 class="page-title">Mudar Senha</h4>
                             </div>
                         </div>
                     </div>     
@@ -43,7 +43,7 @@
                     
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="firstname" class="form-label">Old Password</label>
+                        <label for="firstname" class="form-label">Senha Antiga</label>
                         <input type="password" name="old_password" class="form-control @error('old_password') is-invalid @enderror" id="current_password">
                         @error('old_password')
                         <span class="text-danger"> {{ $message }} </span>
@@ -53,7 +53,7 @@
 
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="firstname" class="form-label">New Password</label>
+                        <label for="firstname" class="form-label">Senha Nova</label>
                         <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror" id="new_password">
                         @error('new_password')
                         <span class="text-danger"> {{ $message }} </span>
@@ -63,7 +63,7 @@
 
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="firstname" class="form-label">Confirm New Password</label>
+                        <label for="firstname" class="form-label">Confirmar Nova Senha</label>
                         <input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation">
                     
                     </div>
@@ -72,7 +72,7 @@
                     </div> <!-- end row -->
                         
                     <div class="text-end">
-                        <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                        <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
                     </div>
                 </form>
             </div> <!-- end row -->

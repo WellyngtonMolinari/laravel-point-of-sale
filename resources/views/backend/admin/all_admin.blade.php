@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.admin') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Admin </a>  
+      <a href="{{ route('add.admin') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Administrador </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Admin <span class="btn btn-danger">{{ count($alladminuser) }}</span> </h4>
+                                    <h4 class="page-title"> Administradores <span class="btn btn-danger">{{ count($alladminuser) }}</span> </h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,13 +30,13 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
                                 <th>Email</th>
-                                <th>Phone</th> 
-                                <th>Role</th> 
-                                <th>Action</th>
+                                <th>Celular</th> 
+                                <th>Cargo</th> 
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
