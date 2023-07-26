@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Permission</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Permissão</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Permission</h4>
+                                    <h4 class="page-title">Adicionar Permissão</h4>
                                 </div>
                             </div>
                         </div>     
@@ -40,14 +40,14 @@
         <form id="myForm" method="post" action="{{ route('permission.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Permission</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Adicionar Permissão</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Permission Name</label>
+            <label for="firstname" class="form-label">Nome da Permissão</label>
             <input type="text" name="name" class="form-control"   >
 
         </div>
@@ -56,23 +56,23 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Group Name </label>
+            <label for="firstname" class="form-label">Nome do Grupo</label>
             <select name="group_name" class="form-select" id="example-select">
-                    <option selected disabled >Select Group  </option>
+                    <option selected disabled >Selecionar Grupo </option>
 
         <option value="admin">Admin</option>
-        <option value="pos"> Pos</option>
-        <option value="employee"> Employee</option>
-        <option value="customer"> Customer</option>
-        <option value="supplier"> Supplier</option>
-        <option value="salary"> Salary </option>
-        <option value="attendence"> Attendence </option>
-        <option value="category"> Category </option>
-        <option value="product"> Product </option>
-        <option value="expense"> Expense </option>
-        <option value="orders"> Orders</option>
-        <option value="stock"> Stock </option>
-        <option value="roles"> Roles</option> 
+        <option value="pos"> Vendas </option>
+        <option value="employee"> Funcionários</option>
+        <option value="customer"> Clientes</option>
+        <option value="supplier"> Fornecedores</option>
+        <option value="salary"> Salário </option>
+        <option value="attendence"> Registro de Ponto </option>
+        <option value="category"> Categorias </option>
+        <option value="product"> Produtos </option>
+        <option value="expense"> Despesas </option>
+        <option value="orders"> Pedidos </option>
+        <option value="stock"> Estoque </option>
+        <option value="roles"> Cargos </option> 
 
                 </select>
 
@@ -87,7 +87,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>

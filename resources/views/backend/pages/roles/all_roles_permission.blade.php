@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.roles.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Role in Permission </a>  
+      <a href="{{ route('add.roles.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar</a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Roles Permission</h4>
+                                    <h4 class="page-title">Cargos e Permissões</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,10 +30,10 @@
                     <table  class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Roles Name </th>
-                                <th>Permission Name </th> 
-                                <th width="18%">Action</th>
+                                <th>ID</th>
+                                <th>Nomes dos Cargos </th>
+                                <th>Nome das Permissões</th> 
+                                <th width="18%">Ações</th>
                             </tr>
                         </thead>
 
@@ -50,8 +50,8 @@
 
                 </td> 
                 <td width="18%">
-<a href="{{ route('admin.edit.roles',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('admin.delete.roles',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ route('admin.edit.roles',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+<a href="{{ route('admin.delete.roles',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 
                 </td>
             </tr>

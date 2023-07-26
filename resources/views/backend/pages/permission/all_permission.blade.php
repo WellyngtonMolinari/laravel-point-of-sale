@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Permission </a>  
+      <a href="{{ route('add.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Permissões </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Permission</h4>
+                                    <h4 class="page-title">Todos Cargos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,10 +30,10 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Permission Name </th>
-                                <th>Group Name </th> 
-                                <th>Action</th>
+                                <th>ID</th>
+                                <th>Nome da Permissão </th>
+                                <th>Nome do Grupo </th> 
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -45,8 +45,8 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->group_name }}</td> 
                 <td>
-<a href="{{ route('edit.permission',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('delete.permission',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ route('edit.permission',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+<a href="{{ route('delete.permission',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 
                 </td>
             </tr>

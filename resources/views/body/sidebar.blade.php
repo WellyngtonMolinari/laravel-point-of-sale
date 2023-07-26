@@ -25,7 +25,7 @@
 <a href="{{ route('pos') }}">
     <span class="badge bg-pink float-end">Hot</span>
     <i data-feather="shopping-cart" class="icon-dual-danger"></i>
-    <span> Criar pedido </span>
+    <span> Vender </span>
 </a>
 </li>
 @endif

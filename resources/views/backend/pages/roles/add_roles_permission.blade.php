@@ -20,11 +20,11 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Add Role In Permission</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Permissões em Cargos </a></li>
 
                     </ol>
                 </div>
-                <h4 class="page-title">Add Role In Permission</h4>
+                <h4 class="page-title">Adicionar Permissões em Cargos</h4>
             </div>
         </div>
     </div>     
@@ -47,7 +47,7 @@
         <form id="myForm" method="post" action="{{ route('role.permission.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Role In Permission</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Permissões em Cargos</h5>
 
             <div class="row"> 
 
@@ -55,7 +55,7 @@
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">All Roles </label>
             <select name="role_id" class="form-select" id="example-select">
-         <option selected disabled >Select Roles  </option>
+         <option selected disabled >Selecionar Cargos  </option>
          @foreach($roles as $role)          
         <option value="{{ $role->id }}"> {{ $role->name }}</option> 
         @endforeach
@@ -66,7 +66,7 @@
 
        <div class="form-check mb-2 form-check-primary">
         <input class="form-check-input" type="checkbox" value="" id="customckeck15" >
-        <label class="form-check-label" for="customckeck15">Primary</label>
+        <label class="form-check-label" for="customckeck15">Tudo</label>
        </div>
 
         <hr>

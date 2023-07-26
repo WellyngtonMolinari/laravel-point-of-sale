@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Roles</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Cargos</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Roles</h4>
+                                    <h4 class="page-title">Adicionar Cargos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -40,14 +40,14 @@
         <form id="myForm" method="post" action="{{ route('roles.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Roles</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Cargos</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Role Name</label>
+            <label for="firstname" class="form-label">Nome do Cargo</label>
             <input type="text" name="name" class="form-control"   >
 
         </div>
@@ -60,7 +60,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>

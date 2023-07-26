@@ -20,11 +20,11 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Edit Role In Permission</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Editar Cargos</a></li>
 
                     </ol>
                 </div>
-                <h4 class="page-title">Edit Role In Permission</h4>
+                <h4 class="page-title">Editar Cargos</h4>
             </div>
         </div>
     </div>     
@@ -52,7 +52,7 @@
 
         <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label"> Roles Name </label>
+            <label for="firstname" class="form-label"> Nome do Cargo </label>
             <h3> {{ $role->name }} </h3>
 
         </div>
@@ -60,7 +60,7 @@
 
        <div class="form-check mb-2 form-check-primary">
         <input class="form-check-input" type="checkbox" value="" id="customckeck15"  >
-        <label class="form-check-label" for="customckeck15">Primary</label>
+        <label class="form-check-label" for="customckeck15">Tudo</label>
        </div>
 
         <hr>
@@ -102,7 +102,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>
