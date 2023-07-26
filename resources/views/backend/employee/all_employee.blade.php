@@ -12,10 +12,10 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-        <a href=" {{ route('add.employee') }} " class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee</a>
+        <a href=" {{ route('add.employee') }} " class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Funcionário</a>
                         </ol>
                     </div>
-                    <h4 class="page-title">All Employees</h4>
+                    <h4 class="page-title">Todos Funcionários</h4>
                 </div>
             </div>
         </div>     
@@ -29,13 +29,13 @@
                         <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
-                                    <th>Sl</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Imagem</th>
+                                    <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Salary</th>
-                                    <th>Action</th>
+                                    <th>Celular</th>
+                                    <th>Salário</th>
+                                    <th>Ação</th>
                                 </tr>
                             </thead>
                         
@@ -51,11 +51,11 @@
                     <td>{{ $item->salary }}</td>
                     <td>
     @if(Auth::user()->can('employee.edit'))
-<a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+<a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
 @endif
 
 @if(Auth::user()->can('employee.delete'))
-<a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 @endif
 
                     </td>
