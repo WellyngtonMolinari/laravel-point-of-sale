@@ -47,7 +47,7 @@
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Nome do Cliente</label>
+            <label for="firstname" class="form-label">Nome do Cliente *</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"   >
              @error('name')
       <span class="text-danger"> {{ $message }} </span>
@@ -58,7 +58,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Email do Cliente </label>
+            <label for="firstname" class="form-label">Email do Cliente *</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"   >
              @error('email')
       <span class="text-danger"> {{ $message }} </span>
@@ -71,7 +71,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Celular do Cliente     </label>
+            <label for="firstname" class="form-label">Celular do Cliente *</label>
             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"   >
              @error('phone')
       <span class="text-danger"> {{ $message }} </span>
