@@ -66,19 +66,19 @@
 <li>
 <a href="#sidebarCrm" data-bs-toggle="collapse">
     <i class="fas fa-suitcase"></i>
-    <span>Customer Manage</span>
+    <span>Clientes</span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="sidebarCrm">
     <ul class="nav-second-level">
 @if(Auth::user()->can('customer.all'))
 <li>
-<a href="{{ route('all.customer') }}">All Customer</a>
+<a href="{{ route('all.customer') }}">Todos Clientes</a>
 </li>
 @endif
 @if(Auth::user()->can('customer.add'))
 <li>
-<a href="{{ route('add.customer') }}">Add Customer</a>
+<a href="{{ route('add.customer') }}">Adicionar Cliente</a>
 </li>
 @endif
              
@@ -91,16 +91,16 @@
 <li>
 <a href="#sidebarEmail" data-bs-toggle="collapse">
     <i class="fas fa-box"></i>
-    <span>Supplier Manage</span>
+    <span>Fornecedores</span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="sidebarEmail">
     <ul class="nav-second-level">
         <li>
-            <a href="{{ route('all.supplier') }}">All Supplier</a>
+            <a href="{{ route('all.supplier') }}">Todos Fornecedores</a>
         </li>
         <li>
-            <a href="{{ route('add.supplier') }}">Add Supplier</a>
+            <a href="{{ route('add.supplier') }}">Adicionar Fornecedores</a>
         </li>
         
     </ul>
@@ -113,19 +113,19 @@
 <li>
 <a href="#sidebarEcommerce" data-bs-toggle="collapse">
     <i class="fas fa-users"></i>
-<span> Employee Manage  </span>
+<span> Funcionários  </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="sidebarEcommerce">
 <ul class="nav-second-level">
     @if(Auth::user()->can('employee.all'))
     <li>
-        <a href="{{ route('all.employee') }}"><i data-feather="users" class="icons-xs mdi mdi-account-multiple-outline "></i>     All Employee</a>
+        <a href="{{ route('all.employee') }}"><i data-feather="users" class="icons-xs mdi mdi-account-multiple-outline "></i>     Todos Funcionários</a>
     </li>
     @endif
     @if(Auth::user()->can('employee.add'))
     <li>
-        <a href="{{ route('add.employee') }}"><i data-feather="user-plus" class="icons-xs icon-dual-success"></i>     Add Employee </a>
+        <a href="{{ route('add.employee') }}"><i data-feather="user-plus" class="icons-xs icon-dual-success"></i>     Adicionar Funcionários </a>
     </li>
    @endif
 </ul>
@@ -138,24 +138,24 @@
 <li>
 <a href="#salary" data-bs-toggle="collapse">
     <i class="fas fa-money-bill-wave"></i>
-    <span> Employee Salary </span>
+    <span> Salários </span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="salary">
     <ul class="nav-second-level">
         <li>
-            <a href="{{ route('add.advance.salary') }}">Add Advance Salary</a>
+            <a href="{{ route('add.advance.salary') }}">Adicionar Adiantamentos</a>
         </li>
         <li>
-            <a href="{{ route('all.advance.salary') }}">All Advance Salary</a>
+            <a href="{{ route('all.advance.salary') }}">Todos Adiantamentos</a>
         </li>
 
          <li>
-            <a href="{{ route('pay.salary') }}">Pay Salary</a>
+            <a href="{{ route('pay.salary') }}">Pagar Salário</a>
         </li> 
 
         <li>
-            <a href="{{ route('month.salary') }}">Last Month Salary</a>
+            <a href="{{ route('month.salary') }}">Salário do Último mês</a>
         </li>
         
     </ul>
@@ -168,13 +168,13 @@
 <li>
 <a href="#attendence" data-bs-toggle="collapse">
     <i class="fas fa-map-marker-alt"></i>
-    <span> Employee Attendence </span>
+    <span> Ponto de presença </span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="attendence">
     <ul class="nav-second-level">
         <li>
-            <a href="{{ route('employee.attend.list') }}">Employee Attendence List </a>
+            <a href="{{ route('employee.attend.list') }}">Lista de Presenças</a>
         </li>
     
     </ul>
@@ -188,13 +188,13 @@
 <li>
 <a href="#category" data-bs-toggle="collapse">
     <i class="fas fa-list-alt"></i>
-    <span>Products Category </span>
+    <span>Categoria de produtos</span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="category">
     <ul class="nav-second-level">
         <li>
-            <a href="{{ route('all.category') }}">All Category </a>
+            <a href="{{ route('all.category') }}">Todas Categorias </a>
         </li>
     
     </ul>
@@ -207,20 +207,20 @@
 <li>
 <a href="#product" data-bs-toggle="collapse">
     <i class="fas fa-list-ul"></i>
-    <span> Products  </span>
+    <span> Produtos  </span>
     <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="product">
     <ul class="nav-second-level">
         <li>
-            <a href="{{ route('all.product') }}">All Product </a>
+            <a href="{{ route('all.product') }}">Lista de Produtos </a>
         </li>
 
          <li>
-            <a href="{{ route('add.product') }}">Add Product </a>
+            <a href="{{ route('add.product') }}">Adicionar Produto </a>
         </li>
          <li>
-            <a href="{{ route('import.product') }}">Import Product </a>
+            <a href="{{ route('import.product') }}">Importar Produto </a>
         </li>
     
     </ul>
@@ -232,13 +232,13 @@
 <li>
 <a href="#stock" data-bs-toggle="collapse">
 <i class="fas fa-boxes"></i>
-<span> Stock Manage   </span>
+<span> Controle de Estoque   </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="stock">
 <ul class="nav-second-level">
 <li>
-    <a href="{{ route('stock.manage') }}">Stock </a>
+    <a href="{{ route('stock.manage') }}">Estoque de Produtos</a>
 </li>
 
 
@@ -252,25 +252,25 @@
 <li>
 <a href="#permission" data-bs-toggle="collapse">
 <i class="far fa-id-card"></i>
-<span> Roles And Permission    </span>
+<span> Cargos e Permissões    </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="permission">
 <ul class="nav-second-level">
 <li>
-    <a href="{{ route('all.permission') }}">All Permission </a>
+    <a href="{{ route('all.permission') }}">Todas Permissões </a>
 </li>
 
 <li>
-    <a href="{{ route('all.roles') }}">All Roles </a>
+    <a href="{{ route('all.roles') }}">Todos Cargos </a>
 </li>
 
  <li>
-    <a href="{{ route('add.roles.permission') }}">Roles in Permission </a>
+    <a href="{{ route('add.roles.permission') }}">Adicionar Permissões </a>
 </li>
 
  <li>
-    <a href="{{ route('all.roles.permission') }}">All Roles in Permission </a>
+    <a href="{{ route('all.roles.permission') }}">Todos Cargos</a>
 </li>
 
 
@@ -283,17 +283,17 @@
 <li>
 <a href="#admin" data-bs-toggle="collapse">
 <i data-feather="settings" class="icon-dual-danger"></i>
-<span>Setting Admin User    </span>
+<span>Administrador    </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="admin">
 <ul class="nav-second-level">
 <li>
-    <a href="{{ route('all.admin') }}">All Admin </a>
+    <a href="{{ route('all.admin') }}">Todos Admins</a>
 </li>
 
 <li>
-    <a href="{{ route('add.admin') }}">Add Admin </a>
+    <a href="{{ route('add.admin') }}">Adicionar Admin </a>
 </li> 
 
 </ul>
@@ -304,7 +304,7 @@
                  
               
 
-                <li class="menu-title mt-2">Custom</li>
+                <li class="menu-title mt-2">Extras</li>
 
 @if(Auth::user()->can('expense.menu'))
             <li>
@@ -316,16 +316,16 @@
                 <div class="collapse" id="sidebarAuth">
 <ul class="nav-second-level">
 <li>
-<a href="{{ route('add.expense') }}">Add Expense</a>
+<a href="{{ route('add.expense') }}">Adicionar Gastos</a>
 </li>
 <li>
-<a href="{{ route('today.expense') }}">Today Expense</a>
+<a href="{{ route('today.expense') }}">Gastos do Dia</a>
 </li>
 <li>
-<a href="{{ route('month.expense') }}">Monthly Expense</a>
+<a href="{{ route('month.expense') }}">Gastos do Mês</a>
 </li>
 <li>
-<a href="{{ route('year.expense') }}">Yearly Expense</a>
+<a href="{{ route('year.expense') }}">Gastos do Ano</a>
 </li>
 
 </ul>
@@ -337,13 +337,13 @@
 <li>
                 <a href="#backup" data-bs-toggle="collapse">
                     <i class="fas fa-database"></i>
-                    <span>Database Backup  </span>
+                    <span>Backup </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="backup">
 <ul class="nav-second-level">
 <li>
-<a href="{{ route('database.backup') }}">Database Backup </a>
+<a href="{{ route('database.backup') }}">Backup </a>
 </li> 
 
 </ul>
