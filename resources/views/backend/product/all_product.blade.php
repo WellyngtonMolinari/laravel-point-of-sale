@@ -12,14 +12,14 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-<a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Import </a>  
+<a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importar </a>  
 &nbsp;&nbsp;&nbsp;
-<a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Export </a>  
+<a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  
 &nbsp;&nbsp;&nbsp;
-      <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Product </a>  
+      <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produtos </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Product</h4>
+                                    <h4 class="page-title">Todos Produtos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -34,15 +34,15 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Supplier</th>
-                                <th>Code</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Fornecedor</th>
+                                <th>Código</th>
+                                <th>Preço</th>
+                                <th>Estado</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
 
@@ -59,9 +59,9 @@
                 <td>{{ $item->selling_price }}</td>
                     <td>
 @if($item->expire_date >= Carbon\Carbon::now()->format('Y-m-d'))
-<span class="badge rounded-pill bg-success">Valid</span>
+<span class="badge rounded-pill bg-success">Válido</span>
 @else
-<span class="badge rounded-pill bg-danger">Invalid</span>
+<span class="badge rounded-pill bg-danger">Inválido</span>
 @endif
                     </td>
                 <td>

@@ -17,7 +17,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Import Product</h4>
+                                    <h4 class="page-title">Importar Produto</h4>
                                 </div>
                             </div>
                         </div>     
@@ -46,7 +46,7 @@
 
     <div class="col-md-12">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Xlsx file Import</label>
+            <label for="firstname" class="form-label">Importar Arquivo Xlsx</label>
             <input type="file" name="import_file" class="form-control"   >
 
         </div>

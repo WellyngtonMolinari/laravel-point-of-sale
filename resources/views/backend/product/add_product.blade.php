@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Product</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Produto</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Product</h4>
+                                    <h4 class="page-title">Adicionar Produto</h4>
                                 </div>
                             </div>
                         </div>     
@@ -40,14 +40,14 @@
         <form id="myForm" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Product</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Produto</h5>
 
             <div class="row">
 
 
     <div class="form-group col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Product Name</label>
+            <label for="firstname" class="form-label">Nome do Produto</label>
             <input type="text" name="product_name" class="form-control"   >
 
         </div>
@@ -56,9 +56,9 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Category </label>
+            <label for="firstname" class="form-label">Categoria </label>
             <select name="category_id" class="form-select" id="example-select">
-                    <option selected disabled >Select Category </option>
+                    <option selected disabled >Selecionar Categoria </option>
                     @foreach($category as $cat)
         <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                      @endforeach
@@ -69,9 +69,9 @@
 
           <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Supplier </label>
+            <label for="firstname" class="form-label">Fornecedor </label>
             <select name="supplier_id" class="form-select" id="example-select">
-                    <option selected disabled >Select Supplier </option>
+                    <option selected disabled >Selecionar Fornecedor </option>
                     @foreach($supplier as $sup)
         <option value="{{ $sup->id }}">{{ $sup->name }}</option>
                      @endforeach
@@ -95,7 +95,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Garage    </label>
+            <label for="firstname" class="form-label">Lote do Produto    </label>
             <input type="text" name="product_garage" class="form-control "   >
 
            </div>
@@ -104,7 +104,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Store    </label>
+            <label for="firstname" class="form-label">Quantidade em Estoque    </label>
             <input type="text" name="product_store" class="form-control "   >
 
            </div>
@@ -117,7 +117,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Buying Date   </label>
+            <label for="firstname" class="form-label">Data de Compra  </label>
             <input type="date" name="buying_date" class="form-control "   >
 
            </div>
@@ -126,7 +126,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Expire Date    </label>
+            <label for="firstname" class="form-label">Data de Vencimento    </label>
             <input type="date" name="expire_date" class="form-control "   >
 
            </div>
@@ -135,7 +135,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Buying Price   </label>
+            <label for="firstname" class="form-label">Preço de Compra  </label>
             <input type="text" name="buying_price" class="form-control "   >
 
            </div>
@@ -145,7 +145,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Selling Price    </label>
+            <label for="firstname" class="form-label">Preço de Venda    </label>
             <input type="text" name="selling_price" class="form-control "   >
 
            </div>
@@ -156,7 +156,7 @@
 
    <div class="col-md-12">
 <div class="form-group mb-3">
-        <label for="example-fileinput" class="form-label">Customer Image</label>
+        <label for="example-fileinput" class="form-label">Imagem do produto</label>
         <input type="file" name="product_image" id="image" class="form-control">
 
     </div>
@@ -178,7 +178,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>

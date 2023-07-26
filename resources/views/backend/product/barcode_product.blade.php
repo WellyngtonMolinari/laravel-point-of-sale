@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-   <li class="breadcrumb-item"><a  class="btn btn-primary rounded-pill waves-effect waves-light" href="{{ route('all.product') }}">Back </a></li>
+   <li class="breadcrumb-item"><a  class="btn btn-success rounded-pill waves-effect waves-light" href="{{ route('all.product') }}">Voltar </a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Bar Code Product</h4>
+                                    <h4 class="page-title">Código de Barras</h4>
                                 </div>
                             </div>
                         </div>     
@@ -39,14 +39,14 @@
     <div class="tab-pane" id="settings">
 
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Bar Code Product</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Código de Barras</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Code</label>
+            <label for="firstname" class="form-label">Código</label>
              <h3>{{ $product->product_code }}</h3>
 
         </div>
@@ -59,7 +59,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product BarCode    </label>
+            <label for="firstname" class="form-label">Código de Barras    </label>
            <h3> {!! $generator->getBarcode($product->product_code,$generator::TYPE_CODE_128)  !!} </h3>
 
            </div>

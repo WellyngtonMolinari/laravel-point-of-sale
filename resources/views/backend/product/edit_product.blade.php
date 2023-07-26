@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Edit Product</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Editar Produto</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Edit Product</h4>
+                                    <h4 class="page-title">Editar Produto</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,14 +42,14 @@
 
             <input type="hidden" name="id" value="{{ $product->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Edit Product</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Produto</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Name</label>
+            <label for="firstname" class="form-label">Nome do Produto </label>
             <input type="text" name="product_name" class="form-control" value="{{ $product->product_name }}"   >
 
         </div>
@@ -58,9 +58,9 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Category </label>
+            <label for="firstname" class="form-label">Categoria </label>
             <select name="category_id" class="form-select" id="example-select">
-                    <option selected disabled >Select Category </option>
+                    <option selected disabled >Selecionar Categoria </option>
                     @foreach($category as $cat)
         <option value="{{ $cat->id }}" {{ $cat->id == $product->category_id ? 'selected' : ''  }} >{{ $cat->category_name }}</option>
                      @endforeach
@@ -71,9 +71,9 @@
 
           <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Supplier </label>
+            <label for="firstname" class="form-label">Fornecedor </label>
             <select name="supplier_id" class="form-select" id="example-select">
-                    <option selected disabled >Select Supplier </option>
+                    <option selected disabled >Selecionar Fornecedor </option>
                     @foreach($supplier as $sup)
         <option value="{{ $sup->id }}"  {{ $sup->id == $product->supplier_id ? 'selected' : ''  }}>{{ $sup->name }}</option>
                      @endforeach
@@ -87,7 +87,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Code    </label>
+            <label for="firstname" class="form-label">Código Produto    </label>
             <input type="text" name="product_code" class="form-control "  value="{{ $product->product_code }}"   >
 
            </div>
@@ -97,7 +97,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Garage    </label>
+            <label for="firstname" class="form-label">Lote do Produto    </label>
             <input type="text" name="product_garage" class="form-control "   value="{{ $product->product_garage }}"  >
 
            </div>
@@ -106,7 +106,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Store    </label>
+            <label for="firstname" class="form-label">Quantia em Estoque   </label>
             <input type="text" name="product_store" class="form-control "  value="{{ $product->product_store }}"   >
 
            </div>
@@ -119,7 +119,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Buying Date   </label>
+            <label for="firstname" class="form-label">Data de Compra   </label>
             <input type="date" name="buying_date" class="form-control "  value="{{ $product->buying_date }}"   >
 
            </div>
@@ -128,7 +128,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Expire Date    </label>
+            <label for="firstname" class="form-label">Data de Vencimento   </label>
             <input type="date" name="expire_date" class="form-control "  value="{{ $product->expire_date }}"   >
 
            </div>
@@ -137,7 +137,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Buying Price   </label>
+            <label for="firstname" class="form-label">Preço de Compra   </label>
             <input type="text" name="buying_price" class="form-control "  value="{{ $product->buying_price }}"   >
 
            </div>
@@ -147,7 +147,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Selling Price    </label>
+            <label for="firstname" class="form-label">Preço de Venda    </label>
             <input type="text" name="selling_price" class="form-control "  value="{{ $product->selling_price }}"   >
 
            </div>
@@ -158,7 +158,7 @@
 
    <div class="col-md-12">
 <div class="form-group mb-3">
-        <label for="example-fileinput" class="form-label">Customer Image</label>
+        <label for="example-fileinput" class="form-label">Imagem</label>
         <input type="file" name="product_image" id="image" class="form-control">
 
     </div>
