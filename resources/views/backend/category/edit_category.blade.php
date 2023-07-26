@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Edit Category </a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Editar Categoria </a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Edit Category</h4>
+                                    <h4 class="page-title">Editar Categoria</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,14 +42,14 @@
 
             <input type="hidden" name="id" value="{{ $category->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Edit Category</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Categoria</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Category Name</label>
+            <label for="firstname" class="form-label">Nome da Categoria</label>
             <input type="text" name="category_name" class="form-control" value="{{ $category->category_name }}"   >
 
         </div>
@@ -59,7 +59,7 @@
             </div> <!-- end row --> 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>

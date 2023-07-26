@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Add Category</button>   
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Categorias</button>   
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Category</h4>
+                                    <h4 class="page-title">Todas Categorias</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,9 +30,9 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th> 
-                                <th>Category Name </th>
-                                <th>Action</th>
+                                <th>ID</th> 
+                                <th>Nome da Categoria</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -43,8 +43,8 @@
                 <td>{{ $key+1 }}</td> 
                 <td>{{ $item->category_name }}</td> 
                 <td>
-<a href="{{ route('edit.category',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ route('edit.category',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+<a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 
                 </td>
             </tr>
@@ -76,13 +76,13 @@
                     @csrf
 
                     <div class="mb-3">
-             <label for="username" class="form-label">Category Name</label>
-     <input class="form-control" type="text" name="category_name" placeholder="Add Category ">
+             <label for="username" class="form-label">Nome da Categoria</label>
+     <input class="form-control" type="text" name="category_name" placeholder="Adicionar Categoria ">
                     </div>
 
 
                     <div class="mb-3 text-center">
-                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                        <button class="btn btn-primary" type="submit">Salvar Mudanças</button>
                     </div>
 
                 </form>
