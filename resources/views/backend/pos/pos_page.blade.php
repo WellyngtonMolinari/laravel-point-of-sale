@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">POS</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Vendas</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">POS</h4>
+                                    <h4 class="page-title">Vender</h4>
                                 </div>
                             </div>
                         </div>     
@@ -32,11 +32,11 @@
                     <table class="table table-bordered border-primary mb-0">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>QTY</th>
-                                <th>Price</th>
+                                <th>Nome</th>
+                                <th>Qtd</th>
+                                <th>Preço</th>
                                 <th>SubTotal</th>
-                                <th>Action</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 
@@ -70,9 +70,9 @@
             
                 <div class="bg-primary">
                     <br>
-<p style="font-size:18px; color:#fff"> Quantity : {{ Cart::count() }} </p>
+<p style="font-size:18px; color:#fff"> Quantidade : {{ Cart::count() }} </p>
 <p style="font-size:18px; color:#fff"> SubTotal : {{ Cart::subtotal() }} </p>
-<p style="font-size:18px; color:#fff"> Vat : {{ Cart::tax() }} </p>
+<p style="font-size:18px; color:#fff"> Taxa : {{ Cart::tax() }} </p>
 <p><h2 class="text-white"> Total </h2> <h1 class="text-white"> {{ Cart::total() }}</h1>   </p>
                      <br>
                 </div>
@@ -83,13 +83,13 @@
             
             
                     <div class="form-group mb-3">
-                        <label for="firstname" class="form-label">All Customer </label>
+                        <label for="firstname" class="form-label">Todos Clientes </label>
             
-                          <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light mb-2">Add Customer </a>  
+                          <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light mb-2">Adicionar Cliente </a>  
             
             
                         <select name="customer_id" class="form-select" id="example-select">
-                                <option selected disabled >Select Customer </option>
+                                <option selected disabled >Selecionar Cliente </option>
                                 @foreach($customer as $cus)
                     <option value="{{ $cus->id }}">{{ $cus->name }}</option>
                                  @endforeach
@@ -97,7 +97,7 @@
             
                     </div>
             
-                    <button class="btn btn-blue waves-effect waves-light">Create Invoice</button>
+                    <button class="btn btn-blue waves-effect waves-light">Gerar</button>
             
             
                 </form>
@@ -123,9 +123,9 @@
            <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th> 
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th> 
                                  <th> </th> 
                             </tr>
                         </thead>
