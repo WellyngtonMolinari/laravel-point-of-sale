@@ -11,10 +11,10 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">History Salary</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Histórico Salários</a></li>
                         </ol>
                     </div>
-                    <h4 class="page-title">History Salary</h4>
+                    <h4 class="page-title">Histórico Salários</h4>
                 </div>
             </div>
         </div>
@@ -26,27 +26,26 @@
                     <div class="card-body">
                         <!-- end timeline content-->
                         <div class="tab-pane" id="settings">
-                            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> History
-                                Salary</h5>
+                            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Histórico Salários</h5>
 
                             <!-- ... previous code ... -->
 @foreach($historysalary as $item)
 <div class="row">
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Name</label>
+            <label for="firstname" class="form-label">Nome do Funcionário</label>
             <strong style="color: #000000;">{{ $item['employee']['name'] }}</strong>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Salary Month</label>
+            <label for="firstname" class="form-label">Mês do Salário</label>
             <strong style="color: #000000;">
                 @if(isset($item['salary_month']))
                     {{ date("F", strtotime($item['salary_month'])) }}
                 @else
-                    Salary Month Not Available
+                    Salário não disponível
                 @endif
             </strong>
         </div>
@@ -54,12 +53,12 @@
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Salary</label>
+            <label for="firstname" class="form-label">Salário do Funcionário</label>
             <strong style="color: #000000;">
                 @if(isset($item['employee']['salary']))
                     {{ $item['employee']['salary'] }}
                 @else
-                    Employee Salary Not Available
+                    Salário do Funcionário não disponível
                 @endif
             </strong>
         </div>
@@ -67,12 +66,12 @@
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Advance Salary</label>
+            <label for="firstname" class="form-label">Adiantamentos</label>
             <strong style="color: #000000;">
                 @if(isset($item['advance']['advance_salary']))
                     {{ $item['advance']['advance_salary'] }}
                 @else
-                    Advance Salary Not Available
+                    Adiantamentos não disponível
                 @endif
             </strong>
         </div>
@@ -86,14 +85,14 @@
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Due Salary</label>
+            <label for="firstname" class="form-label">Salário Devido</label>
             <strong style="color: #000000;">
                 @if(isset($item['advance']['advance_salary']) && $item['advance']['advance_salary'] === null)
-                    <span>No Salary</span>
+                    <span>Sem salário</span>
                 @elseif(isset($amount))
                     {{ round($amount) }}
                 @else
-                    Due Salary Not Available
+                    Salário devido não disponível
                 @endif
             </strong>
         </div>

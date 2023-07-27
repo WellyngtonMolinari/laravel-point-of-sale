@@ -13,15 +13,15 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
 
-   <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Import </a>  
+   <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importar </a>  
    &nbsp;&nbsp;&nbsp;
-   <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Export </a>  
+   <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  
    &nbsp;&nbsp;&nbsp;
 
-      <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Product </a>  
+      <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produto </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Product</h4>
+                                    <h4 class="page-title">Todos Produtos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -36,13 +36,13 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Supplier</th>
-                                <th>Code</th>
-                                <th>Stock</th> 
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Fornecedor</th>
+                                <th>Código</th>
+                                <th>Estoque</th> 
                             </tr>
                         </thead>
 

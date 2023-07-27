@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.advance.salary') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Advance Salary </a>  
+      <a href="{{ route('add.advance.salary') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Adiantamento </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Advance Salary</h4>
+                                    <h4 class="page-title">Todos Adiantamentos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,13 +30,13 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Month</th>
-                                <th>Salary</th>
-                                <th>Advance</th>
-                                <th>Action</th>
+                                <th>01</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Mês</th>
+                                <th>Salário</th>
+                                <th>Adiantamento</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
 
@@ -52,15 +52,15 @@
                 <td>
 
                     @if($item->advance_salary == NULL )
-                        <p>No Advance</p>
+                        <p>Nenhum Adiantamento</p>
                     @else
                      {{ $item->advance_salary }}
                     @endif
 
                   </td>
                 <td>
-<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('delete.advance.salary',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+<a href="{{ route('delete.advance.salary',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Deletar</a>
 
                 </td>
             </tr>
