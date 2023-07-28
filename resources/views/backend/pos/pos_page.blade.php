@@ -73,7 +73,7 @@
 <p style="font-size:18px; color:#fff"> Quantidade : {{ Cart::count() }} </p>
 <p style="font-size:18px; color:#fff"> SubTotal : {{ Cart::subtotal() }} </p>
 <p style="font-size:18px; color:#fff"> Taxa : {{ Cart::tax() }} </p>
-<p><h2 class="text-white"> Total </h2> <h1 class="text-white"> {{ Cart::total() }}</h1>   </p>
+<p><h2 class="text-white"> Total  </h2> <h1 class="text-white"> {{ Cart::total() }} R$</h1>   </p>
                      <br>
                 </div>
             
