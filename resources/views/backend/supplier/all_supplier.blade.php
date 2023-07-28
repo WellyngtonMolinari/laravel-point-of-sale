@@ -12,10 +12,10 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Supplier </a>  
+      <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Todos Fornecedores </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Supplier</h4>
+                                    <h4 class="page-title">Todos Fornecedores</h4>
                                 </div>
                             </div>
                         </div>     
@@ -30,13 +30,13 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Imagem</th>
+                                <th>Nome</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Type</th>
-                                <th>Action</th>
+                                <th>Celular</th>
+                                <th>Tipo</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
 

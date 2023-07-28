@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Details Supplier</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Detalhes do Fornecedor</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Details Supplier</h4>
+                                    <h4 class="page-title">Detalhes do Fornecedor</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,14 +42,14 @@
 
            <input type="hidden" name="id" value="{{ $supplier->id }}"> 
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Details Supplier</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Detalhe do Fornecedor</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Name</label>
+            <label for="firstname" class="form-label">Nome do Fornecedor</label>
             <p class="text-danger">{{ $supplier->name }}</p>
         </div>
     </div>
@@ -68,7 +68,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Phone    </label>
+            <label for="firstname" class="form-label">Celular do Fornecedor   </label>
              <p class="text-danger">{{ $supplier->phone }}</p>
         </div>
     </div>
@@ -76,7 +76,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Address    </label>
+            <label for="firstname" class="form-label">Endereço do Fornecedor   </label>
              <p class="text-danger">{{ $supplier->address }}</p>
         </div>
     </div>
@@ -85,7 +85,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Shop Name    </label>
+            <label for="firstname" class="form-label">Loja do Fornecedor   </label>
              <p class="text-danger">{{ $supplier->shopname }}</p>
         </div>
     </div>
@@ -93,7 +93,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Type   </label>
+            <label for="firstname" class="form-label">Tipo de Fornecedor  </label>
              <p class="text-danger">{{ $supplier->type }}</p>
         </div>
     </div>
@@ -104,7 +104,7 @@
 
  <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Account Holder    </label>
+            <label for="firstname" class="form-label">Titular da Conta    </label>
 
 
              <p class="text-danger">{{ $supplier->account_holder }}</p>
@@ -113,7 +113,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Account Number    </label>
+            <label for="firstname" class="form-label">Número da Conta     </label>
 
               <p class="text-danger">{{ $supplier->account_number }}</p>
         </div>
@@ -121,7 +121,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Name    </label>
+            <label for="firstname" class="form-label">Nome do Banco    </label>
 
               <p class="text-danger">{{ $supplier->bank_name }}</p>
         </div>
@@ -130,7 +130,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Branch    </label>
+            <label for="firstname" class="form-label">Agência Bancária     </label>
 
              <p class="text-danger">{{ $supplier->bank_branch }}</p>
         </div>
@@ -139,7 +139,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier City    </label>
+            <label for="firstname" class="form-label">Cidade do Fornecedor  </label>
             <p class="text-danger">{{ $supplier->city }}</p>
         </div>
     </div>

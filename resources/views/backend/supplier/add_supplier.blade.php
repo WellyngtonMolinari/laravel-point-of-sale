@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Supplier</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Fornecedor</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Supplier</h4>
+                                    <h4 class="page-title">Adicionar Fornecedor</h4>
                                 </div>
                             </div>
                         </div>     
@@ -40,14 +40,14 @@
         <form method="post" action="{{ route('supplier.store') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Supplier</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Fornecedor</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Name</label>
+            <label for="firstname" class="form-label">Nome do Fornecedor</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"   >
              @error('name')
       <span class="text-danger"> {{ $message }} </span>
@@ -58,7 +58,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Email</label>
+            <label for="firstname" class="form-label">Email do Fornecedor</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"   >
              @error('email')
       <span class="text-danger"> {{ $message }} </span>
@@ -71,7 +71,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Phone    </label>
+            <label for="firstname" class="form-label">Celular do Fornecedor   </label>
             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"   >
              @error('phone')
       <span class="text-danger"> {{ $message }} </span>
@@ -82,7 +82,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Address    </label>
+            <label for="firstname" class="form-label">Endereço do Fornecedor  </label>
             <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"   >
              @error('address')
       <span class="text-danger"> {{ $message }} </span>
@@ -94,7 +94,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Shop Name    </label>
+            <label for="firstname" class="form-label">Loja do Fornecedor   </label>
             <input type="text" name="shopname" class="form-control @error('shopname') is-invalid @enderror"   >
              @error('shopname')
       <span class="text-danger"> {{ $message }} </span>
@@ -105,11 +105,11 @@
 
   <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Type    </label>
+            <label for="firstname" class="form-label">Tipo de Fornecedor   </label>
            <select name="type" class="form-select @error('type') is-invalid @enderror" id="example-select">
-                    <option selected disabled >Select Type </option>
-                    <option value="Distributor">Distributor </option>
-                    <option value="Whole Seller">Whole Seller </option> 
+                    <option selected disabled >Selecionar Tipo </option>
+                    <option value="Distributor">Distribuidor </option>
+                    <option value="Whole Seller">Atacado </option> 
                 </select>
                  @error('type')
       <span class="text-danger"> {{ $message }} </span>
@@ -122,7 +122,7 @@
 
  <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Account Holder    </label>
+            <label for="firstname" class="form-label">Titular da Conta    </label>
             <input type="text" name="account_holder" class="form-control @error('account_holder') is-invalid @enderror"   >
              @error('account_holder')
       <span class="text-danger"> {{ $message }} </span>
@@ -132,7 +132,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Account Number    </label>
+            <label for="firstname" class="form-label">Número da Conta    </label>
             <input type="text" name="account_number" class="form-control @error('account_number') is-invalid @enderror"   >
              @error('account_number')
       <span class="text-danger"> {{ $message }} </span>
@@ -142,7 +142,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Name    </label>
+            <label for="firstname" class="form-label">Nome do Banco    </label>
             <input type="text" name="bank_name" class="form-control @error('bank_name') is-invalid @enderror"   >
              @error('bank_name')
       <span class="text-danger"> {{ $message }} </span>
@@ -153,7 +153,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Branch    </label>
+            <label for="firstname" class="form-label">Agência Bancária    </label>
             <input type="text" name="bank_branch" class="form-control @error('bank_branch') is-invalid @enderror"   >
              @error('bank_branch')
       <span class="text-danger"> {{ $message }} </span>
@@ -164,7 +164,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier City    </label>
+            <label for="firstname" class="form-label">Cidade do Cliente    </label>
             <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"   >
              @error('city')
       <span class="text-danger"> {{ $message }} </span>
@@ -177,7 +177,7 @@
 
    <div class="col-md-12">
 <div class="mb-3">
-        <label for="example-fileinput" class="form-label">Supplier Image</label>
+        <label for="example-fileinput" class="form-label">Image do Fornecedor</label>
         <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
           @error('image')
       <span class="text-danger"> {{ $message }} </span>
@@ -201,7 +201,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Salvar</button>
             </div>
         </form>
     </div>

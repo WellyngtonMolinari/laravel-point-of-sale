@@ -140,7 +140,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Agência bancária    </label>
+            <label for="firstname" class="form-label">Agência Bancária    </label>
             <input type="text" name="bank_branch" class="form-control @error('bank_branch') is-invalid @enderror"   >
              @error('bank_branch')
       <span class="text-danger"> {{ $message }} </span>
