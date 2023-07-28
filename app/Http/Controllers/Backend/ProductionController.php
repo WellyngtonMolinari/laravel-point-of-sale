@@ -8,7 +8,9 @@ use App\Models\Production;
 use App\Models\Category;
 use App\Models\Customer;
 use Intervention\Image\Facades\Image;
-use Carbon\Carbon; 
+use Carbon\Carbon;
+use App\Exports\ProductionExport;
+use Maatwebsite\Excel\Facades\Excel; 
 
 class ProductionController extends Controller
 {
@@ -152,5 +154,11 @@ class ProductionController extends Controller
         return redirect()->back()->with($notification); 
 
     } // End Method
+
+    public function Export(){
+
+        return Excel::download(new ProductionExport,'productions.xlsx');
+
+    }// End Method 
 
 }

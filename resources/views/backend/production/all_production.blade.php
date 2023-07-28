@@ -12,9 +12,8 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-<a href="{{ route('all.production') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importar </a>  
 &nbsp;&nbsp;&nbsp;
-<a href="{{ route('all.production') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  
+<a href="{{ route('export.production') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  
 &nbsp;&nbsp;&nbsp;
       <a href="{{ route('add.production') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produção </a>  
                                         </ol>

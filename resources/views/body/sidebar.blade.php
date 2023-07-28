@@ -263,10 +263,6 @@
          <li>
             <a href="{{ route('add.production') }}">Adicionar Produção </a>
         </li>
-         <li>
-            <a href="{{ route('import.product') }}">Importar Produção </a>
-        </li>
-    
     </ul>
 </div>
 </li>
