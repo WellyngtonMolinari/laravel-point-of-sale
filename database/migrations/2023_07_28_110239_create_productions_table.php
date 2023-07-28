@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('production_store')->nullable();
             $table->string('deadline_date')->nullable();
             $table->string('cost_price')->nullable();
+            $table->string('selling_price')->nullable();
             $table->string('profit_price')->nullable(); 
             $table->timestamps();
         });

@@ -16,7 +16,7 @@
 &nbsp;&nbsp;&nbsp;
 <a href="{{ route('all.production') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  
 &nbsp;&nbsp;&nbsp;
-      <a href="{{ route('all.production') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produção </a>  
+      <a href="{{ route('add.production') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produção </a>  
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Todas Produções</h4>
