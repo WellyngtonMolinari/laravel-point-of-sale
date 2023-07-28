@@ -34,7 +34,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Foto</th>
+                                <th>Imagem</th>
                                 <th>Nome do Modelo</th>
                                 <th>Categoria</th>
                                 <th>Cliente</th>
@@ -55,7 +55,7 @@
                 <td>{{ $item['category']['category_name'] }}</td>
                 <td>{{ $item['customer']['name'] }}</td>
                 <td>{{ $item->production_store }}</td>
-                <td>{{ $item->deadline_date }}</td>
+                <td>{{ date('d/m/Y', strtotime($item->deadline_date)) }}</td>
                     <td>
     @if($item->production_status == 'Em Andamento')
     <span class="badge rounded-pill bg-danger">Em Andamento</span>
