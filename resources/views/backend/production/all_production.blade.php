@@ -35,14 +35,12 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Foto</th>
                                 <th>Nome do Modelo</th>
                                 <th>Categoria</th>
                                 <th>Cliente</th>
-                                <th>Imagem</th>
                                 <th>Qtd.</th>
                                 <th>Prazo de Entrega</th>
-                                <th>Preço de Custo</th>
-                                <th>Lucro </th>
                                 <th>Estado</th>
                                 <th>Ações</th>
                             </tr>
@@ -55,18 +53,16 @@
                 <td>{{ $key+1 }}</td>
                 <td> <img src="{{ asset($item->production_image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item->production_name }}</td>
-                <td>{{ $item->category_id }}</td>
-                <td>{{ $item->customer_id }}</td>
+                <td>{{ $item['category']['category_name'] }}</td>
+                <td>{{ $item['customer']['name'] }}</td>
                 <td>{{ $item->production_store }}</td>
                 <td>{{ $item->deadline_date }}</td>
-                <td>{{ $item->cost_price }}</td>
-                <td>{{ $item->profit_price }}</td>
                     <td>
-{{-- @if()
+{{-- @if() --}}
 <span class="badge rounded-pill bg-success">Em Andamento</span>
-@else
-<span class="badge rounded-pill bg-danger">Concluído</span>
-@endif --}}
+{{-- @else --}}
+{{-- <span class="badge rounded-pill bg-danger">Concluído</span> --}}
+{{-- @endif --}}
                     </td>
                 <td>
 <a href="{{ route('all.production',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa fa-pencil" aria-hidden="true"></i></a>

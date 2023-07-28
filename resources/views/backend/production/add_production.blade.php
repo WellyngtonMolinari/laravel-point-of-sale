@@ -53,7 +53,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form id="myForm2" method="post" action="{{ route('customer.store') }}" enctype="multipart/form-data">
+        <form id="myForm2" method="post" action="{{ route('production.store') }}" enctype="multipart/form-data">
         	@csrf
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Produção</h5>
