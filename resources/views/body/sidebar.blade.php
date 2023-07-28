@@ -247,6 +247,30 @@
 </li>
 @endif
 
+@if(Auth::user()->can('product.menu'))
+<li>
+<a href="#production" data-bs-toggle="collapse">
+    <i class="fa fa-industry"></i>
+    <span> Controle de Produção  </span>
+    <span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="production">
+    <ul class="nav-second-level">
+        <li>
+            <a href="{{ route('all.production') }}">Lista de Produção</a>
+        </li>
+
+         <li>
+            <a href="{{ route('add.product') }}">Adicionar Produção </a>
+        </li>
+         <li>
+            <a href="{{ route('import.product') }}">Importar Produção </a>
+        </li>
+    
+    </ul>
+</div>
+</li>
+@endif
 
 @if(Auth::user()->can('roles.menu'))
 <li>
@@ -310,7 +334,7 @@
             <li>
                 <a href="#sidebarAuth" data-bs-toggle="collapse">
                     <i class="far fa-money-bill-alt"></i>
-                    <span>Expense </span>
+                    <span>Despesas </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarAuth">

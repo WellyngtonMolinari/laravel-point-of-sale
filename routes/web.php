@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\ProductionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -261,6 +262,23 @@ Route::middleware(['auth'])->group(function()
     Route::get('{getFilename}','DownloadDatabase');
     Route::get('/delete/database/{getFilename}','DeleteDatabase');
    });
+
+   ///Production All Route 
+   Route::controller(ProductionController::class)->group(function(){
+
+    Route::get('/all/production','AllProduction')->name('all.production');
+    Route::get('/add/production','AddProduction')->name('add.production');
+    Route::post('/store/production','StoreProduction')->name('production.store');
+    Route::get('/edit/production/{id}','EditProduction')->name('edit.production');
+    Route::post('/update/production','UpdateProduction')->name('production.update');
+    Route::get('/delete/production/{id}','DeleteProduction')->name('delete.production');
+    
+    Route::get('/import/production','ImportProduction')->name('import.product');
+
+    Route::get('/export','Export')->name('export');
+    Route::post('/import','Import')->name('import');
+    
+});
    
 
 }); // End User Middleware
