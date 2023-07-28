@@ -58,11 +58,11 @@
                 <td>{{ $item->production_store }}</td>
                 <td>{{ $item->deadline_date }}</td>
                     <td>
-{{-- @if() --}}
-<span class="badge rounded-pill bg-success">Em Andamento</span>
-{{-- @else --}}
-{{-- <span class="badge rounded-pill bg-danger">Concluído</span> --}}
-{{-- @endif --}}
+    @if($item->production_status == 'Em Andamento')
+    <span class="badge rounded-pill bg-danger">Em Andamento</span>
+    @else
+    <span class="badge rounded-pill bg-success">Finalizado</span>
+    @endif
                     </td>
                 <td>
 <a href="{{ route('edit.production',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa fa-pencil" aria-hidden="true"></i></a>

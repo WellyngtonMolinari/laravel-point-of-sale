@@ -46,6 +46,7 @@ class ProductionController extends Controller
             'selling_price' => $request->selling_price,
             'profit_price' => $request->profit_price,
             'profit_quantity' => $request->profit_quantity,
+            'production_status' => $request->production_status,
             'production_image' => $save_url,
             'created_at' => Carbon::now(), 
 
@@ -92,6 +93,7 @@ class ProductionController extends Controller
             'selling_price' => $request->selling_price,
             'profit_price' => $request->profit_price,
             'profit_quantity' => $request->profit_quantity,
+            'production_status' => $request->production_status,
             'production_image' => $save_url,
             'created_at' => Carbon::now(), 
 
@@ -117,6 +119,7 @@ class ProductionController extends Controller
             'selling_price' => $request->selling_price,
             'profit_price' => $request->profit_price,
             'profit_quantity' => $request->profit_quantity,
+            'production_status' => $request->production_status,
             'created_at' => Carbon::now(), 
 
         ]);

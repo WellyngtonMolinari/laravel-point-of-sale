@@ -147,7 +147,16 @@
         </div>
 
 
-
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="state" class="form-label">Estado</label>
+                <select name="production_status" class="form-select" id="example-select">
+                    <option selected disabled>Selecionar Estado</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+            </div>
+        </div>
 
    <div class="col-md-12">
 <div class="mb-3">
@@ -254,6 +263,9 @@
                 selling_price: {
                     required : true,
                 },
+                production_status: {
+                    required : true,
+                },
             },
             messages :{
                 production_name: {
@@ -276,6 +288,9 @@
                 },
                 selling_price: {
                     required : 'Digite o preço de Venda',
+                },
+                production_status: {
+                    required : 'Selecion o estado do pedido',
                 },
             },
             errorElement : 'span', 

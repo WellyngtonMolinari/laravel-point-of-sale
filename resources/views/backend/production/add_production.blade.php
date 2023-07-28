@@ -145,7 +145,17 @@
         </div>
 
 
-    
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="state" class="form-label">Estado</label>
+                <select name="production_status" class="form-select" id="example-select">
+                    <option selected disabled>Selecionar Estado</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+            </div>
+        </div>
+        
 
    <div class="col-md-12">
 <div class="form-group mb-3">
@@ -255,6 +265,9 @@
                 production_image: {
                     required : true,
                 },
+                production_status: {
+                    required : true,
+                },
             },
             messages :{
                 production_name: {
@@ -280,6 +293,9 @@
                 },
                 production_image: {
                     required : 'Selecione imagem',
+                },
+                production_status: {
+                    required : 'Selecion o estado do pedido',
                 },
             },
             errorElement : 'span', 

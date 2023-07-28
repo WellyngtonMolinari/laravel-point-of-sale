@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('cost_price')->nullable();
             $table->string('selling_price')->nullable();
             $table->string('profit_price')->nullable(); 
-            $table->string('profit_quantity')->nullable(); 
+            $table->string('profit_quantity')->nullable();
+            $table->string('production_status')->nullable();
             $table->timestamps();
         });
     }
