@@ -29,11 +29,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Produção</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Editar Produção</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Adicionar Produção</h4>
+                                    <h4 class="page-title">Editar Produção</h4>
                                 </div>
                             </div>
                         </div>     
@@ -53,10 +53,12 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form id="myForm2" method="post" action="{{ route('production.store') }}" enctype="multipart/form-data">
+        <form id="myForm2" method="post" action="{{ route('production.update') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Produção</h5>
+            <input type="hidden" name="id" value="{{ $production->id }}">
+
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Produção</h5>
 
             <div class="row">
 
@@ -64,7 +66,7 @@
     <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Nome da Produção</label>
-            <input type="text" name="production_name" class="form-control"   >
+            <input type="text" name="production_name" class="form-control" value="{{ $production->production_name }}"  >
 
         </div>
     </div>
@@ -76,7 +78,7 @@
             <select name="category_id" class="form-select" id="example-select">
                     <option selected disabled >Selecionar Categoria</option>
                     @foreach($category as $cat)
-        <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+        <option value="{{ $cat->id }}" {{ $cat->id == $production->category_id ? 'selected' : '' }} >{{ $cat->category_name }}</option>
                      @endforeach
                 </select>
 
@@ -90,7 +92,7 @@
             <select name="customer_id" class="form-select" id="example-select">
                     <option selected disabled >Selecionar Cliente </option>
                     @foreach($customer as $cus)
-        <option value="{{ $cus->id }}">{{ $cus->name }}</option>
+        <option value="{{ $cus->id }}" {{ $cus->id == $production->customer_id ? 'selected' : '' }}>{{ $cus->name }}</option>
                      @endforeach
                 </select>
 
@@ -103,7 +105,7 @@
               <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Prazo de Entrega   </label>
-            <input type="date" name="deadline_date" class="form-control "   >
+            <input type="date" name="deadline_date" class="form-control " value="{{ $production->deadline_date }}"  >
 
            </div>
         </div>
@@ -112,43 +114,43 @@
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Preço de Custo Unitário (R$)</label>
-                <input type="text" name="cost_price" id="cost_price" class="form-control">
+                <input type="text" name="cost_price" id="cost_price" class="form-control" value="{{ $production->cost_price }}">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Preço de Venda Unitário (R$)</label>
-                <input type="text" name="selling_price" id="selling_price" class="form-control">
+                <input type="text" name="selling_price" id="selling_price" class="form-control" value="{{ $production->selling_price }}">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Quantidade</label>
-                <input type="text" name="production_store" id="production_store" class="form-control">
+                <input type="text" name="production_store" id="production_store" class="form-control" value="{{ $production->production_store }}">
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="firstname" class="form-label">Lucro por Unidade (R$)</label>
-                <input type="text" name="profit_price" id="profit_price" class="form-control" readonly>
+                <input type="text" name="profit_price" id="profit_price" class="form-control" value="{{ $production->profit_price }}" readonly>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Lucro por Quantidade (R$)</label>
-                <input type="text" name="profit_quantity" id="profit_quantity" class="form-control" readonly>
+                <input type="text" name="profit_quantity" id="profit_quantity" class="form-control" value="{{ $production->profit_quantity }}" readonly>
             </div>
         </div>
 
 
-    
+
 
    <div class="col-md-12">
-<div class="form-group mb-3">
+<div class="mb-3">
         <label for="example-fileinput" class="form-label">Imagem</label>
         <input type="file" name="production_image" id="image" class="form-control">
 
@@ -159,7 +161,7 @@
    <div class="col-md-12">
 <div class="mb-3">
         <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage" src="{{  url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
+        <img id="showImage" src="{{  asset($production->production_image) }}" class="rounded-circle avatar-lg img-thumbnail"
                 alt="profile-image">
     </div>
  </div> <!-- end col -->
@@ -252,9 +254,6 @@
                 selling_price: {
                     required : true,
                 },
-                production_image: {
-                    required : true,
-                },
             },
             messages :{
                 production_name: {
@@ -277,9 +276,6 @@
                 },
                 selling_price: {
                     required : 'Digite o preço de Venda',
-                },
-                production_image: {
-                    required : 'Selecione imagem',
                 },
             },
             errorElement : 'span', 
