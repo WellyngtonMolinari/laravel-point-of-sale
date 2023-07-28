@@ -131,20 +131,24 @@
                 <input type="text" name="production_store" id="production_store" class="form-control" value="{{ $production->production_store }}">
             </div>
         </div>
-
+        
+        @if(Auth::user()->can('pos.menu'))
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="firstname" class="form-label">Lucro por Unidade (R$)</label>
                 <input type="text" name="profit_price" id="profit_price" class="form-control" value="{{ $production->profit_price }}" readonly>
             </div>
         </div>
+        @endif
 
+        @if(Auth::user()->can('pos.menu'))
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Lucro por Quantidade (R$)</label>
                 <input type="text" name="profit_quantity" id="profit_quantity" class="form-control" value="{{ $production->profit_quantity }}" readonly>
             </div>
         </div>
+        @endif
 
 
         <div class="col-md-6">
