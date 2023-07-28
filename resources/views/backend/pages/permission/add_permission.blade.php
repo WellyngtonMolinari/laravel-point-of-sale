@@ -69,10 +69,11 @@
         <option value="attendence"> Registro de Ponto </option>
         <option value="category"> Categorias </option>
         <option value="product"> Produtos </option>
+        <option value="production"> Produção </option>
         <option value="expense"> Despesas </option>
         <option value="orders"> Pedidos </option>
         <option value="stock"> Estoque </option>
-        <option value="roles"> Cargos </option> 
+        <option value="roles"> Cargos </option>
 
                 </select>
 

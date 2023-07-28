@@ -247,7 +247,7 @@
 </li>
 @endif
 
-@if(Auth::user()->can('product.menu'))
+@if(Auth::user()->can('production.menu'))
 <li>
 <a href="#production" data-bs-toggle="collapse">
     <i class="fa fa-industry"></i>
@@ -256,13 +256,16 @@
 </a>
 <div class="collapse" id="production">
     <ul class="nav-second-level">
+        @if(Auth::user()->can('production.all'))
         <li>
             <a href="{{ route('all.production') }}">Lista de Produção</a>
         </li>
-
+        @endif
+        @if(Auth::user()->can('production.add'))
          <li>
             <a href="{{ route('add.production') }}">Adicionar Produção </a>
         </li>
+        @endif
     </ul>
 </div>
 </li>
