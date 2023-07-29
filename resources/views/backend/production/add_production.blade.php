@@ -108,20 +108,21 @@
            </div>
         </div>
 
-
+        @if(Auth::user()->can('pos.menu'))
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Preço de Custo Unitário (R$)</label>
                 <input type="text" name="cost_price" id="cost_price" class="form-control">
             </div>
         </div>
-
+        
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Preço de Venda Unitário (R$)</label>
                 <input type="text" name="selling_price" id="selling_price" class="form-control">
             </div>
         </div>
+        @endif
 
         <div class="col-md-6">
             <div class="form-group mb-3">
@@ -137,9 +138,7 @@
                 <input type="text" name="profit_price" id="profit_price" class="form-control" readonly>
             </div>
         </div>
-        @endif
-        
-        @if(Auth::user()->can('pos.menu'))
+
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="firstname" class="form-label">Lucro por Quantidade (R$)</label>

@@ -10,7 +10,8 @@ use App\Models\Customer;
 use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
 use App\Exports\ProductionExport;
-use Maatwebsite\Excel\Facades\Excel; 
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Auth;
 
 class ProductionController extends Controller
 {
@@ -73,70 +74,49 @@ class ProductionController extends Controller
     } // End Method
 
 
-    public function UpdateProduction(Request $request){
-
+    public function UpdateProduction(Request $request)
+    {
         $production_id = $request->id;
+        $user = Auth::user(); // Get the authenticated user
 
-        if ($request->file('production_image')) {
+        // Retrieve the production record to be updated
+        $production = Production::findOrFail($production_id);
 
-        $image = $request->file('production_image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('upload/production/'.$name_gen);
-        $save_url = 'upload/production/'.$name_gen;
+        // Update the fields that all users can update
+        $production->production_name = $request->production_name;
+        $production->category_id = $request->category_id;
+        $production->customer_id = $request->customer_id;
+        $production->production_store = $request->production_store;
+        $production->deadline_date = $request->deadline_date;
+        $production->production_status = $request->production_status;
 
-        Production::findOrFail($production_id)->update([
+        // Check if the user has the necessary permission to update specific fields
+        if ($user->can('pos.menu')) {
+            // Update the fields that require 'pos.menu' permission
+            $production->cost_price = $request->cost_price;
+            $production->selling_price = $request->selling_price;
+            $production->profit_price = $request->profit_price;
+            $production->profit_quantity = $request->profit_quantity;
+        }
 
-            'production_name' => $request->production_name,
-            'category_id' => $request->category_id,
-            'customer_id' => $request->customer_id,
-            'production_store' => $request->production_store,
-            'deadline_date' => $request->deadline_date,
-            'cost_price' => $request->cost_price,
-            'selling_price' => $request->selling_price,
-            'profit_price' => $request->profit_price,
-            'profit_quantity' => $request->profit_quantity,
-            'production_status' => $request->production_status,
-            'production_image' => $save_url,
-            'created_at' => Carbon::now(), 
+        // Check if the image is uploaded and update the image field if necessary
+        if ($request->hasFile('production_image')) {
+            // Add the logic to handle the uploaded image and save it to the appropriate location
+            // For example, you can use the `store` method of the uploaded file.
+            // $path = $request->file('production_image')->store('path_to_image_directory');
+            // $production->production_image = $path;
+        }
 
-        ]);
+        // Save the changes to the database
+        $production->save();
 
-         $notification = array(
-            'message' => 'production Updated Successfully',
+        $notification = array(
+            'message' => 'Production Updated Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('all.production')->with($notification); 
-
-        } else{
-
-        Production::findOrFail($production_id)->update([
-
-            'production_name' => $request->production_name,
-            'category_id' => $request->category_id,
-            'customer_id' => $request->customer_id,
-            'production_store' => $request->production_store,
-            'deadline_date' => $request->deadline_date,
-            'cost_price' => $request->cost_price,
-            'selling_price' => $request->selling_price,
-            'profit_price' => $request->profit_price,
-            'profit_quantity' => $request->profit_quantity,
-            'production_status' => $request->production_status,
-            'created_at' => Carbon::now(), 
-
-        ]);
-
-            $notification = array(
-            'message' => 'production Updated Successfully',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('all.production')->with($notification); 
-
-        } // End else Condition  
-
-
-    } // End Method 
+        return redirect()->route('all.production')->with($notification);
+    }
 
     public function DeleteProduction($id){
 
@@ -160,5 +140,12 @@ class ProductionController extends Controller
         return Excel::download(new ProductionExport,'productions.xlsx');
 
     }// End Method 
+
+    public function DetailsProduction($id){
+
+        $production = Production::findOrFail($id);
+        return view('backend.production.details_production',compact('production'));
+
+    } // End Method 
 
 }
