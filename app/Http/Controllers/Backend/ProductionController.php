@@ -101,10 +101,12 @@ class ProductionController extends Controller
 
         // Check if the image is uploaded and update the image field if necessary
         if ($request->hasFile('production_image')) {
-            // Add the logic to handle the uploaded image and save it to the appropriate location
-            // For example, you can use the `store` method of the uploaded file.
-            // $path = $request->file('production_image')->store('path_to_image_directory');
-            // $production->production_image = $path;
+            // Handle the uploaded image and save it to the appropriate location
+            $image = $request->file('production_image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $image->move('upload/production/', $name_gen);
+            $save_url = 'upload/production/' . $name_gen;
+            $production->production_image = $save_url;
         }
 
         // Save the changes to the database
@@ -117,6 +119,7 @@ class ProductionController extends Controller
 
         return redirect()->route('all.production')->with($notification);
     }
+
 
     public function DeleteProduction($id){
 

@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Todos Fornecedores </a>  
+      <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Fornecedores </a>  
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Todos Fornecedores</h4>

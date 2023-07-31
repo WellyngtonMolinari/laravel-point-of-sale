@@ -45,7 +45,7 @@
                         </div>     
                         <!-- end page title --> 
 
-@if(Auth::user()->can('admin.menu'))
+@if(Auth::user()->can('expense.menu'))
 <div class="row">
     <div class="col-md-6 col-xl-3">
         <div class="widget-rounded-circle card">

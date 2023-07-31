@@ -177,7 +177,7 @@
 
    <div class="col-md-12">
 <div class="mb-3">
-        <label for="example-fileinput" class="form-label">Image do Fornecedor</label>
+        <label for="example-fileinput" class="form-label">Imagem do Fornecedor</label>
         <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
           @error('image')
       <span class="text-danger"> {{ $message }} </span>
