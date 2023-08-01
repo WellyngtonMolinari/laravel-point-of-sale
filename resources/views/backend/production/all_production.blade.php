@@ -73,6 +73,13 @@
                     
 <a href="{{ route('details.production',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light" title="Details"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
+<form action="{{ route('add.production.stock', $item->id) }}" method="POST">
+    @csrf
+    <button type="submit" class="btn btn-primary rounded-pill waves-effect waves-light" title="Add to Stock">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+</form>
+
                 </td>
             </tr>
             @endforeach

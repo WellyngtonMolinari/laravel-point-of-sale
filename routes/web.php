@@ -272,7 +272,9 @@ Route::middleware(['auth'])->group(function()
     Route::get('/edit/production/{id}','EditProduction')->name('edit.production');
     Route::post('/update/production','UpdateProduction')->name('production.update');
     Route::get('/delete/production/{id}','DeleteProduction')->name('delete.production');
-    Route::get('/details/production/{id}','DetailsProduction')->name('details.production');;
+    Route::get('/details/production/{id}','DetailsProduction')->name('details.production');
+    
+    Route::post('/add_production_to_stock/{productionId}','AddProductionToStock')->name('add.production.stock');
 
     Route::get('/export/production','Export')->name('export.production');
 

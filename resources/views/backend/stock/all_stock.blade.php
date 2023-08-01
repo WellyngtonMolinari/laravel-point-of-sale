@@ -54,7 +54,7 @@
                 <td> <img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item->product_name }}</td>
                 <td>{{ $item['category']['category_name'] }}</td>
-                <td>{{ $item['supllier']['name'] }}</td>
+                <td>{{ $item['supllier']['name'] ?? 'Firma' }}</td>
                 <td>{{ $item->product_code }}</td>
                 <td> <button class="btn btn-warning waves-effect waves-light">{{ $item->product_store }}</button> </td>
 
