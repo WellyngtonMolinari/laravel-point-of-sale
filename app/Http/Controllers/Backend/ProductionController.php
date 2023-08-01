@@ -13,6 +13,8 @@ use App\Exports\ProductionExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use App\Models\FinishedProduction;
 
 class ProductionController extends Controller
 {
@@ -172,9 +174,26 @@ class ProductionController extends Controller
         // Save the new product in the stock.
         $newProduct->save();
 
-        // Decrease the quantity in the production by the amount produced
-        $production->production_store -= $newProduct->product_store;
-        $production->save();
+        
+        // Move the finished production to the 'finished_productions' table
+        DB::table('finished_productions')->insert([
+            'production_name' => $production->production_name,
+            'category_id' => $production->category_id,
+            'customer_id' => $production->customer_id,
+            'production_image' => $production->production_image,
+            'production_store' => $production->production_store,
+            'deadline_date' => $production->deadline_date,
+            'cost_price' => $production->cost_price,
+            'selling_price' => $production->selling_price,
+            'profit_price' => $production->profit_price,
+            'profit_quantity' => $production->profit_quantity,
+            'production_status' => $production->production_status,
+            'created_at' => $production->created_at,
+            'updated_at' => $production->updated_at,
+        ]);
+
+        // Remove the finished production from the 'productions' table
+        $production->delete();
 
         $notification = array(
             'message' => 'Product Added Successfully',
@@ -182,9 +201,14 @@ class ProductionController extends Controller
         );
 
         return redirect()->route('all.production')->with('success', 'Product added to stock successfully!');
+ 
     }
 
+    public function HistoryProduction()
+    {
+        $finishedProduction = FinishedProduction::all();
 
+        return view('backend.production.history_production', compact('finishedProduction'));
+    }
 
-
-}
+} 

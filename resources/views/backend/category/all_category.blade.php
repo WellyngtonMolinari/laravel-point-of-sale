@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Categorias</button>   
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Nova Categoria</button>   
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Todas Categorias</h4>

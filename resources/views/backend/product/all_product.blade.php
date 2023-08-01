@@ -55,7 +55,7 @@
                 <td>{{ $item->product_name }}</td>
                 <td>{{ $item['category']['category_name'] }}</td>
                 <td>{{ $item['supllier']['name'] ?? 'Nenhum' }}</td>
-                <td>{{ $item->product_code }}</td>
+                <td>{{ $item->product_code ?? 'Nenhum' }}</td>
                 <td>{{ $item->selling_price }}</td>
                     <td>
 @if($item->expire_date >= Carbon\Carbon::now()->format('Y-m-d'))

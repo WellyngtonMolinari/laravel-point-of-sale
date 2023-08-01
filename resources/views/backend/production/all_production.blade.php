@@ -73,10 +73,10 @@
 
                 <a href="{{ route('details.production',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light" title="Details"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
-                @if($item->production_status == 'Finalizado')
+                @if($item->production_status == 'Finalizado' && $item->production_store > 0)
                     <form action="{{ route('add.production.stock', $item->id) }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary rounded-pill waves-effect waves-light" title="Add to Stock">
+                        <button type="submit" class="btn btn-primary rounded-pill waves-effect waves-light" title="Add to Stock">Produto
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </button>
                     </form>
@@ -85,6 +85,7 @@
         </tr>
     @endforeach
 </tbody>
+                        
                         
                     </table>
 

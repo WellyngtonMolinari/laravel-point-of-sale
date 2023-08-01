@@ -275,6 +275,7 @@ Route::middleware(['auth'])->group(function()
     Route::get('/details/production/{id}','DetailsProduction')->name('details.production');
     
     Route::post('/add_production_to_stock/{productionId}','AddProductionToStock')->name('add.production.stock');
+    Route::get('/history/production','HistoryProduction')->name('history.production');
 
     Route::get('/export/production','Export')->name('export.production');
 

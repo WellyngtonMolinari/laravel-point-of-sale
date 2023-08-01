@@ -266,6 +266,11 @@
             <a href="{{ route('add.production') }}">Adicionar Produção </a>
         </li>
         @endif
+        @if(Auth::user()->can('production.add'))
+         <li>
+            <a href="{{ route('history.production') }}">Histórico de Produção </a>
+        </li>
+        @endif
     </ul>
 </div>
 </li>
