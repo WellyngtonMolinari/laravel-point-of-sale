@@ -54,7 +54,7 @@
                 <td> <img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item->product_name }}</td>
                 <td>{{ $item['category']['category_name'] }}</td>
-                <td>{{ $item['supllier']['name'] ?? 'Firma' }}</td>
+                <td>{{ $item['supllier']['name'] ?? 'Nenhum' }}</td>
                 <td>{{ $item->product_code }}</td>
                 <td>{{ $item->selling_price }}</td>
                     <td>

@@ -165,15 +165,15 @@ class ProductionController extends Controller
         $newProduct->selling_price = $production->selling_price;
         $newProduct->product_store = $production->production_store; // Set the product_store with the production_store value
         $newProduct->product_image = $production->production_image; // Correctly map the image field
-        // Set the default supplier ID (assuming the ID of the factory owner's supplier is 1)
-        $newProduct->supplier_id = $production->customer_name;
+
+        // Set the supplier ID, if available, otherwise use a default value
+        $newProduct->supplier_id = $production->supplier_id ?? 1; // 1 represents the default supplier ID
+
         // Save the new product in the stock.
         $newProduct->save();
 
-        // You can also decrease the quantity in the production by the amount produced, if applicable.
-        // Assuming you have a "quantity" field in your production table.
-
-        $production->production_store += $newProduct->product_store;
+        // Decrease the quantity in the production by the amount produced
+        $production->production_store -= $newProduct->product_store;
         $production->save();
 
         $notification = array(
@@ -183,6 +183,7 @@ class ProductionController extends Controller
 
         return redirect()->route('all.production')->with('success', 'Product added to stock successfully!');
     }
+
 
 
 
