@@ -116,7 +116,7 @@ class ProductionController extends Controller
         $production->save();
 
         $notification = array(
-            'message' => 'Production Updated Successfully',
+            'message' => 'Production Atualizada com Sucesso',
             'alert-type' => 'success'
         );
 
@@ -133,7 +133,7 @@ class ProductionController extends Controller
         Production::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Production Deleted Successfully',
+            'message' => 'Produção Deletada com Sucesso',
             'alert-type' => 'success'
         );
 
@@ -196,11 +196,11 @@ class ProductionController extends Controller
         $production->delete();
 
         $notification = array(
-            'message' => 'Product Added Successfully',
+            'message' => 'Produção Adicionada ao Estoque!',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('all.production')->with('success', 'Product added to stock successfully!');
+        return redirect()->route('all.production')->with($notification);
  
     }
 
