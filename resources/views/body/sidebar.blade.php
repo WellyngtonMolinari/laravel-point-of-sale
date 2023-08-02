@@ -45,12 +45,13 @@
 </a>
 <div class="collapse" id="orders">
 <ul class="nav-second-level">
+
 <li>
-    <a href="{{ route('pending.order') }}">Pedidos Em Andamento</a>
+        <a href="{{ route('pending.due') }}">Pedidos A Receber</a>
 </li>
 
-    <li>
-        <a href="{{ route('pending.due') }}">Pedidos A Receber</a>
+<li>
+    <a href="{{ route('pending.order') }}">Pedidos Em Andamento</a>
 </li>
 
 <li>

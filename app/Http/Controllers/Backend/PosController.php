@@ -12,15 +12,17 @@ use Carbon\Carbon;
 
 class PosController extends Controller
 {
-    public function Pos(){
+    public function Pos() {
         $todaydate = Carbon::now();
-
-        $product = Product::where('expire_date','>',$todaydate)->latest()->get();
-
+    
+        $product = Product::where('expire_date', '>', $todaydate)
+            ->where('product_store', '>', 0)
+            ->latest()
+            ->get();
+    
         $customer = Customer::latest()->get();
-        return view('backend.pos.pos_page',compact('product','customer'));
-
-    } // End Method 
+        return view('backend.pos.pos_page', compact('product', 'customer'));
+    }
 
     public function AddCart(Request $request){
 
