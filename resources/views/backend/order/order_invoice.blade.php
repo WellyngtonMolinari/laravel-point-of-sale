@@ -81,7 +81,7 @@
         <td>
           <p class="font">
 <h3><span style="color: purple;">Código:</span> # {{ $order->invoice_no }}  </h3>
-Data do Pedido:  {{ $order->order_date }} <br>
+Data do Pedido:  {{ date('d/m/Y', strtotime($order->order_date)) }} <br>
 
          </p>
         </td>
@@ -99,7 +99,7 @@ Data do Pedido:  {{ $order->order_date }} <br>
         <th>Código do Produto</th>
         <th>Quantidade</th>
         <th>Preço</th>
-        <th>Total(+Taxa)</th>
+        <th>Total</th>
       </tr>
     </thead>
     <tbody>
@@ -116,8 +116,8 @@ Data do Pedido:  {{ $order->order_date }} <br>
 
 
 
-        <td align="center">${{ $item->product->selling_price }} </td>
-         <td align="center">$ {{ $item->total }}</td>
+        <td align="center">R${{ $item->product->selling_price }} </td>
+         <td align="center">R$ {{ $item->total }}</td>
       </tr>
       @endforeach
     </tbody>
@@ -126,7 +126,6 @@ Data do Pedido:  {{ $order->order_date }} <br>
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-<h2><span style="color: purple;">Subtotal:</span> R${{ $order->total }} </h2>
 <h2><span style="color: purple;">Total:</span> R${{ $order->total }} </h2>
             {{-- <h2><span style="color: purple;">Full Payment PAID</h2> --}}
         </td>

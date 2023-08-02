@@ -15,7 +15,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Pedidos Confirmados</h4>
+                                    <h4 class="page-title">Pedidos Finalizados</h4>
                                 </div>
                             </div>
                         </div>     
@@ -49,7 +49,7 @@
                 <td>{{ $key+1 }}</td>
                 <td> <img src="{{ asset($item->customer->image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item['customer']['name'] }}</td>
-                <td>{{ $item->order_date }}</td>
+                <td>{{ date('d/m/Y', strtotime($item->order_date)) }}</td>
                 <td>{{ $item->payment_status }}</td>
                 <td>{{ $item->invoice_no }}</td>
                 <td>{{ $item->pay }}</td>

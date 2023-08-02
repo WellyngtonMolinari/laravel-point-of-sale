@@ -85,7 +85,7 @@
   <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Data do Pedido</label>
-             <p class="text-danger"> {{ $order->order_date }} </p>
+             <p class="text-danger">{{ date('d/m/Y', strtotime($order->order_date)) }}</p>
         </div>
     </div>
 

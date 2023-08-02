@@ -49,7 +49,7 @@
                 <td>{{ $key+1 }}</td>
                 <td> <img src="{{ asset($item->customer->image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item['customer']['name'] }}</td>
-                <td>{{ $item->order_date }}</td>
+                <td>{{ date('d/m/Y', strtotime($item->order_date)) }}</td>
                 <td>{{ $item->payment_status }}</td>
                 <td> <span class="btn btn-info waves-effect waves-light"> {{  $item->total  }}</span> </td>
                 <td> <span class="btn btn-success waves-effect waves-light"> {{ round($item->pay) }}</span> </td>

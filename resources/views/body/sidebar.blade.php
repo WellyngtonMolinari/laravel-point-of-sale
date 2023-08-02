@@ -50,11 +50,11 @@
 </li>
 
     <li>
-    <a href="{{ route('complete.order') }}">Pedidos Finalizados</a>
+        <a href="{{ route('pending.due') }}">Pedidos A Receber</a>
 </li>
 
 <li>
-    <a href="{{ route('pending.due') }}">Pedidos A Receber</a>
+    <a href="{{ route('complete.order') }}">Pedidos Finalizados</a>
 </li>
 
 </ul>

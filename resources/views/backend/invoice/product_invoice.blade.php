@@ -57,7 +57,7 @@
                     </div><!-- end col -->
                     <div class="col-md-4 offset-md-2">
                         <div class="mt-3 float-end">
-                            <p><strong>Data do pedido: </strong> <span class="float-end">{{ date('d/m/y') }}</span></p>
+                            <p><strong>Data do pedido: </strong> <span class="float-end">&nbsp{{ date('d/m/y') }}</span></p>
                         </div>
                     </div><!-- end col -->
                 </div>
@@ -176,9 +176,9 @@
 <select name="payment_status" class="form-select" id="example-select">
                 <option selected disabled >Selecionar Pagamento </option>
 
-    <option value="HandCash">Dinheiro</option>
+    <option value="Dinheiro">Dinheiro</option>
     <option value="Cheque">Cheque</option>
-    <option value="Due">Gerar Dívida</option>
+    <option value="Dívida">Gerar Dívida</option>
 
             </select>
                 </div>
