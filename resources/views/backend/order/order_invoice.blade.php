@@ -80,7 +80,7 @@
         </td>
         <td>
           <p class="font">
-<h3><span style="color: purple;">Código:</span> # {{ $order->invoice_no }}  </h3>
+<h3><span style="color: purple;">Pedido n°:</span> # {{ $order->invoice_no }}  </h3>
 Data do Pedido:  {{ date('d/m/Y', strtotime($order->order_date)) }} <br>
 
          </p>
@@ -94,7 +94,7 @@ Data do Pedido:  {{ date('d/m/Y', strtotime($order->order_date)) }} <br>
   <table width="100%">
     <thead style="background-color: purple; color:#FFFFFF;">
       <tr class="font">
-         <th>Imagem </th>
+         {{-- <th>Imagem </th> --}}
         <th>Nome do Produto</th>
         <th>Código do Produto</th>
         <th>Quantidade</th>
@@ -106,9 +106,9 @@ Data do Pedido:  {{ date('d/m/Y', strtotime($order->order_date)) }} <br>
 
      @foreach($orderItem as $item)
       <tr class="font">
-        <td align="center">
+        {{-- <td align="center">
 <img src="{{ public_path($item->product->product_image) }} " height="50px;" width="50px;" alt="">
-        </td>
+        </td> --}}
         <td align="center"> {{ $item->product->product_name }} </td>
 
         <td align="center"> {{ $item->product->product_code }} </td>
