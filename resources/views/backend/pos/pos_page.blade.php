@@ -97,7 +97,7 @@
             
                     </div>
             
-                    <button class="btn btn-blue waves-effect waves-light">Gerar</button>
+                    <button class="btn btn-blue waves-effect waves-light">Gerar Orçamento</button>
             
             
                 </form>

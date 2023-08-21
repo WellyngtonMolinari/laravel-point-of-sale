@@ -137,7 +137,7 @@
                 <div class="mt-4 mb-1">
                     <div class="text-end d-print-none">
                         <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer me-1"></i> Imprimir</a>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Gerar Cobrança </button> 
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Gerar Pedido </button> 
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
 
                     <div class="mb-3">
             <label for="username" class="form-label">Pagar Agora</label>
-    <input class="form-control" type="text" name="pay" placeholder="Pay Now">
+    <input class="form-control" type="text" name="pay" placeholder="Valor a ser pago">
                 </div>
 
 
@@ -200,7 +200,7 @@
    <input type="hidden" name="total" value="{{ Cart::total() }}"> 
 
                 <div class="mb-3 text-center">
-    <button class="btn btn-primary" type="submit">Finalizar Pedido </button>
+    <button class="btn btn-primary" type="submit">Gerar Pedido </button>
                 </div>
 
             </form>

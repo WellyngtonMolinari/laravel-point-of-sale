@@ -280,7 +280,7 @@ Route::middleware(['auth'])->group(function()
     Route::get('/export/production','Export')->name('export.production');
 
     
-});
+    });
    
 
 }); // End User Middleware
