@@ -56,7 +56,7 @@
         <form id="myForm2" method="post" action="{{ route('production.store') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Nova Produção</h5>
+            <h5 class="mb-4 text-uppercase"><i class="fa fa-industry"></i> Adicionar Nova Produção</h5>
 
             <div class="row">
 
@@ -101,7 +101,7 @@
     <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="production_weight" class="form-label">Peso da Peça em kg (Exemplo: 0.350)</label>
-            <input type="text" name="production_weight" class="form-control" placeholder="0.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 0.350">
+            <input type="text" name="production_weight" id="production_weight" class="form-control" placeholder="0.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 0.350">
         </div>
     </div>
     
@@ -132,12 +132,23 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="firstname" class="form-label">Quantidade</label>
-                <input type="text" name="production_store" id="production_store" class="form-control">
+                <label for="production_store" class="form-label">Quantidade</label>
+                <input type="text" name="production_store" id="production_store" class="form-control" placeholder="Enter quantity" required>
             </div>
         </div>
         
+        
+        
+        
         @if(Auth::user()->can('pos.menu'))
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="total_weight" class="form-label">Peso Total Aproximado (kg)</label>
+                <input type="text" name="total_weight" id="total_weight" class="form-control" readonly>
+            </div>
+        </div>
+
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="firstname" class="form-label">Lucro por Unidade (R$)</label>
@@ -232,16 +243,30 @@
             }
         }
 
+        // Function to calculate and update the total weight
+        function calculateTotalWeight() {
+            const productionWeight = parseFloat($("#production_weight").val());
+            const productionStore = parseFloat($("#production_store").val());
+
+            if (!isNaN(productionWeight) && !isNaN(productionStore)) {
+                const totalWeight = productionWeight * productionStore;
+                $("#total_weight").val(totalWeight.toFixed(3)); // Display the result with three decimal places
+            }
+        }
+
         // Call the functions when the page loads (in case there are values pre-filled)
         calculateProfit();
         calculateProfitQuantity();
+        calculateTotalWeight();
 
         // Call the functions whenever the inputs change
         $("#cost_price, #selling_price").on("input", calculateProfit);
         $("#profit_price, #production_store").on("input", calculateProfitQuantity);
+        $("#production_weight, #production_store").on("input", calculateTotalWeight);
     });
 </script>
                 
+
 
 <script type="text/javascript">
     $(document).ready(function (){

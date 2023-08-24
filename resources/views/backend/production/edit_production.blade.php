@@ -100,6 +100,13 @@
     </div>
 
 
+    <div class="col-md-6">
+        <div class="form-group mb-3">
+            <label for="production_weight" class="form-label">Peso da Peça em kg (Exemplo: 0.350)</label>
+            <input type="text" name="production_weight" class="form-control" placeholder="0.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 0.350" value="{{ old('production_weight', $production->production_weight) }}">
+        </div>
+    </div>
+    
 
 
               <div class="col-md-6">
@@ -253,6 +260,9 @@
                 }, 
                 production_store: {
                     required : true,
+                },
+                production_weight: {
+                    required : true,
                 }, 
                 product_garage: {
                     required : true,
@@ -282,6 +292,9 @@
                 },
                 production_store: {
                     required : 'Digite a Quantidade',
+                },
+                production_weight: {
+                    required : 'Digite a o Peso',
                 },
                 deadline_date: {
                     required : 'Selecione o Prazo de Entrega',

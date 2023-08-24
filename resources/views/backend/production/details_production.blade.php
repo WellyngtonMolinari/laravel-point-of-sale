@@ -73,7 +73,12 @@
     </div>
 
 
-
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label for="firstname" class="form-label">Peso em Kg </label>
+            <p class="text-primary">{{ $production->production_weight }}</p>
+        </div>
+    </div>
 
       <div class="col-md-6">
         <div class="mb-3">
