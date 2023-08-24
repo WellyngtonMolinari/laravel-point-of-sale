@@ -100,7 +100,7 @@
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="production_weight" class="form-label">Peso da Peça em kg (Exemplo: 0.350)</label>
+            <label for="production_weight" class="form-label">Peso da Peça em Kg (Exemplo: 0.350)</label>
             <input type="text" name="production_weight" id="production_weight" class="form-control" placeholder="0.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 0.350">
         </div>
     </div>
@@ -144,7 +144,7 @@
 
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="total_weight" class="form-label">Peso Total Aproximado (kg)</label>
+                <label for="total_weight" class="form-label">Peso Total em Kg</label>
                 <input type="text" name="total_weight" id="total_weight" class="form-control" readonly>
             </div>
         </div>

@@ -266,10 +266,33 @@
          <li>
             <a href="{{ route('add.production') }}">Adicionar Produção </a>
         </li>
+
+         <li>
+            <a href="{{ route('history.production') }}">Histórico de Produção </a>
+        </li>
+        @endif
+    </ul>
+</div>
+</li>
+@endif
+
+@if(Auth::user()->can('production.menu'))
+<li>
+<a href="#production" data-bs-toggle="collapse">
+    <i class="fa-solid fa-dolly"></i>
+    <span> Controle de Fios  </span>
+    <span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="production">
+    <ul class="nav-second-level">
+        @if(Auth::user()->can('production.all'))
+        <li>
+            <a href="{{ route('all.production') }}">Lista de Fios</a>
+        </li>
         @endif
         @if(Auth::user()->can('production.add'))
          <li>
-            <a href="{{ route('history.production') }}">Histórico de Produção </a>
+            <a href="{{ route('add.production') }}">Adicionar Fios</a>
         </li>
         @endif
     </ul>

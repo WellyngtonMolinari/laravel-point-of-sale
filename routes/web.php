@@ -281,7 +281,18 @@ Route::middleware(['auth'])->group(function()
 
     
     });
-   
+    
+    ///Product All Route 
+    Route::controller(YarnController::class)->group(function(){
+
+        Route::get('/all/yarn','AllYarn')->name('all.yarn');
+        Route::get('/add/yarn','AddYarn')->name('add.yarn');
+        Route::post('/store/yarn','StoreYarn')->name('yarn.store');
+        Route::get('/edit/yarn/{id}','EditYarn')->name('edit.yarn');
+        Route::post('/update/yarn','UpdateYarn')->name('yarn.update');
+        Route::get('/delete/yarn/{id}','DeleteYarn')->name('delete.yarn');
+        
+    });
 
 }); // End User Middleware
 
