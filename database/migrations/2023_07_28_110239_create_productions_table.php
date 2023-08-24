@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('customer_id')->nullable();
             $table->string('production_image')->nullable();
             $table->string('production_store')->nullable();
+            $table->string('production_weight')->nullable();
             $table->string('deadline_date')->nullable();
             $table->string('cost_price')->nullable();
             $table->string('selling_price')->nullable();

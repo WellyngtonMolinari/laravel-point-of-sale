@@ -56,7 +56,7 @@
         <form id="myForm2" method="post" action="{{ route('production.store') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Produção</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Nova Produção</h5>
 
             <div class="row">
 
@@ -98,7 +98,13 @@
     </div>
 
 
-
+    <div class="col-md-6">
+        <div class="form-group mb-3">
+            <label for="production_weight" class="form-label">Peso da Peça em kg (Exemplo: 0.350)</label>
+            <input type="text" name="production_weight" class="form-control" placeholder="0.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 0.350">
+        </div>
+    </div>
+    
 
               <div class="col-md-6">
         <div class="form-group mb-3">

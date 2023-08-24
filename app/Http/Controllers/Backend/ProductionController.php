@@ -47,6 +47,7 @@ class ProductionController extends Controller
             'category_id' => $request->category_id,
             'customer_id' => $request->customer_id,
             'production_store' => $request->production_store,
+            'production_weight' => $request->production_weight,
             'deadline_date' => $request->deadline_date,
             'cost_price' => $request->cost_price,
             'selling_price' => $request->selling_price,
@@ -90,6 +91,7 @@ class ProductionController extends Controller
         $production->category_id = $request->category_id;
         $production->customer_id = $request->customer_id;
         $production->production_store = $request->production_store;
+        $production->production_weight = $request->production_weight;
         $production->deadline_date = $request->deadline_date;
         $production->production_status = $request->production_status;
 
@@ -166,6 +168,7 @@ class ProductionController extends Controller
         $newProduct->category_id = $production->category_id;
         $newProduct->selling_price = $production->selling_price;
         $newProduct->product_store = $production->production_store; // Set the product_store with the production_store value
+        $newProduct->product_weight = $production->production_weight; // Set the product_store with the production_store value
         $newProduct->product_image = $production->production_image; // Correctly map the image field
 
         // Set the supplier ID, if available, otherwise use a default value
@@ -182,6 +185,7 @@ class ProductionController extends Controller
             'customer_id' => $production->customer_id,
             'production_image' => $production->production_image,
             'production_store' => $production->production_store,
+            'production_weight' => $production->production_weight,
             'deadline_date' => $production->deadline_date,
             'cost_price' => $production->cost_price,
             'selling_price' => $production->selling_price,
