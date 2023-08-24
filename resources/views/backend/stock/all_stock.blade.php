@@ -21,7 +21,7 @@
       <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Produto </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Todos Produtos</h4>
+                                    <h4 class="page-title">Estoque de Produtos</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,7 +42,8 @@
                                 <th>Categoria</th>
                                 <th>Fornecedor</th>
                                 <th>Código</th>
-                                <th>Estoque</th> 
+                                <th>Estoque</th>
+                                <th>Editar</th>
                             </tr>
                         </thead>
 
@@ -57,6 +58,7 @@
                 <td>{{ $item['supllier']['name'] ?? 'Nenhum' }}</td>
                 <td>{{ $item->product_code ?? 'Nenhum'}}</td>
                 <td> <button class="btn btn-warning waves-effect waves-light">{{ $item->product_store }}</button> </td>
+                <td><a href="{{ route('edit.product',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
             </tr>
             @endforeach

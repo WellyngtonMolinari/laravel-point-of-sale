@@ -121,12 +121,12 @@
 <ul class="nav-second-level">
     @if(Auth::user()->can('employee.all'))
     <li>
-        <a href="{{ route('all.employee') }}"><i data-feather="users" class="icons-xs mdi mdi-account-multiple-outline "></i>     Todos Funcionários</a>
+        <a href="{{ route('all.employee') }}"></i>     Todos Funcionários</a>
     </li>
     @endif
     @if(Auth::user()->can('employee.add'))
     <li>
-        <a href="{{ route('add.employee') }}"><i data-feather="user-plus" class="icons-xs icon-dual-success"></i>     Adicionar Funcionários </a>
+        <a href="{{ route('add.employee') }}"></i>     Adicionar Funcionários </a>
     </li>
    @endif
 </ul>
@@ -220,9 +220,9 @@
          <li>
             <a href="{{ route('add.product') }}">Adicionar Produto </a>
         </li>
-         <li>
+         {{-- <li>
             <a href="{{ route('import.product') }}">Importar Produto </a>
-        </li>
+        </li> --}}
     
     </ul>
 </div>

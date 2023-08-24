@@ -25,7 +25,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">{{ date("F Y") }}</h4>
+                    {{-- <h4 class="header-title">{{ date("F Y") }}</h4> --}}
 
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
@@ -45,26 +45,26 @@
         <tbody>
             @foreach($employee as $key=> $item)
             <tr>
-                <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item->name }}</td>
-                <td><span class="badge bg-info"> {{ date("F", strtotime('-1 month')) }} </span> </td>
-                <td> {{ $item->salary }} </td>
-                <td>
-                @if($item['advance']['advance_salary'] == NULL )
-                <p>Sem Adiantamentos</p>
+            <td>{{ $key+1 }}</td>
+            <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
+            <td>{{ $item->name }}</td>
+            <td><span class="badge bg-info"> {{ \Carbon\Carbon::now()->subMonth()->locale('pt_BR')->monthName }} </span> </td>
+            <td> {{ $item->salary }} </td>
+            <td>
+                @if(isset($item['advance']) && $item['advance']['advance_salary'] !== null)
+                    {{ $item['advance']['advance_salary'] }}
                 @else
-                {{ $item['advance']['advance_salary'] }}
+                    <p>Sem Adiantamentos</p>
                 @endif
+            </td>
 
-                </td>
             <td>
                 @php
-                $amount = $item->salary - $item['advance']['advance_salary'];
+                $amount = $item->salary - ($item['advance']['advance_salary'] ?? 0);
                 @endphp
-                <strong style="color: #2fdb00;"> {{ round($amount) }} </strong>
-
-                </td>
+                <strong style="color: #2fdb00;"> {{ $amount }} </strong>
+            </td>
+            
             <td>
 <a href="{{ route('pay.now.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Pagar Agora</a>
 
