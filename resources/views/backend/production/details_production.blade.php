@@ -50,7 +50,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Nome da Produção</label>
-            <p class="text-danger">{{ $production->production_name }}</p>
+            <p class="text-primary">{{ $production->production_name }}</p>
         </div>
     </div>
 
@@ -58,7 +58,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Categoria da Produção</label>
-            <p class="text-danger">{{ $production->category->category_name }}</p>
+            <p class="text-primary">{{ $production->category->category_name }}</p>
         </div>
     </div>
 
@@ -68,7 +68,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Cliente</label>
-            <p class="text-danger">{{ $production->customer->name }}</p>
+            <p class="text-primary">{{ $production->customer->name }}</p>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
       <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Prazo de Entrega  </label>
-             <p class="text-danger">{{ date('d/m/Y', strtotime($production->deadline_date)) }}</p>
+             <p class="text-primary">{{ date('d/m/Y', strtotime($production->deadline_date)) }}</p>
         </div>
     </div>
 
@@ -89,7 +89,7 @@
  <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Preço de Custo Unitário (R$)    </label>
-             <p class="text-danger">{{ $production->cost_price }}</p>
+             <p class="text-primary">{{ $production->cost_price }}</p>
         </div>
     </div>
 
@@ -97,7 +97,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Preço de Venda Unitário (R$) </label>
 
-              <p class="text-danger">{{ $production->selling_price }}</p>
+              <p class="text-primary">{{ $production->selling_price }}</p>
         </div>
     </div>
     @endif
@@ -106,7 +106,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Quantidade    </label>
 
-              <p class="text-danger">{{ $production->production_store }}</p>
+              <p class="text-primary">{{ $production->production_store }}</p>
         </div>
     </div>
 
@@ -115,7 +115,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Lucro por Unidade (R$)    </label>
 
-             <p class="text-danger">{{ $production->profit_price }}</p>
+             <p class="text-success">{{ $production->profit_price }}</p>
         </div>
     </div>
 
@@ -123,7 +123,7 @@
      <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Lucro por Quantidade (R$) </label>
-            <p class="text-danger">{{ $production->profit_quantity }}</p>
+            <p class="text-success">{{ $production->profit_quantity }}</p>
         </div>
     </div>
     @endif
@@ -132,7 +132,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Estado </label>
-            <p class="text-danger">{{ $production->production_status }}</p>
+            <p class="text-primary">{{ $production->production_status }}</p>
         </div>
     </div>
 
