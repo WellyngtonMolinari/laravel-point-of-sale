@@ -54,11 +54,38 @@
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
+                        <label for="firstname" class="form-label">Modelo da Produção</label>
+                        <select name="production_id" class="form-select" id="production-select">
+                            <option selected disabled>Selecionar Produção</option>
+                            @foreach($production as $prod)
+                                <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="yarn_model" class="form-label">Peso do Modelo de Produção</label>
+                        <input type="text" name="yarn_model" id="yarn_model" class="form-control" readonly>
+                    </div>
+                </div>
+            
+                
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
                         <label for="yarn_totalweight" class="form-label">Peso Total dos Fios em Kg (Exemplo: 20.350)</label>
                         <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="20.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
                     </div>
                 </div>
-            
+                
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="firstname" class="form-label">Produção estimada em Peças</label>
+                        <input type="text" name="production_estimate" id="production_estimate" class="form-control" readonly>
+                    </div>
+                </div>
                     
             
                     <div class="col-md-6">
@@ -76,7 +103,7 @@
                     </div>
 
 
-              <div class="col-md-6">
+    <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Categoria </label>
             <select name="category_id" class="form-select" id="example-select">
@@ -102,32 +129,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Modelo da Produção</label>
-            <select name="production_id" class="form-select" id="production-select">
-                <option selected disabled>Selecionar Produção</option>
-                @foreach($production as $prod)
-                    <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
 
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label for="yarn_model" class="form-label">Peso do Modelo de Produção</label>
-            <input type="text" name="yarn_model" id="yarn_model" class="form-control" readonly>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Produção estimada em Peças</label>
-            <input type="text" name="production_estimate" class="form-control "   >
-
-           </div>
-        </div>
 
         <div class="form-group col-md-6">
             <div class="mb-3">
@@ -245,7 +247,23 @@
                 $("#yarn_model").val("");
             }
         });
-    });
+
+        // Function to calculate and update the estimated production
+        function calculateEstimatedProduction() {
+        const yarnTotalWeight = parseFloat($("#yarn_totalweight").val());
+        const yarnModelWeight = parseFloat($("#yarn_model").val());
+
+        if (!isNaN(yarnTotalWeight) && !isNaN(yarnModelWeight) && yarnModelWeight !== 0) {
+            const estimatedProduction = yarnTotalWeight / yarnModelWeight;
+            $("#production_estimate").val(estimatedProduction.toFixed(2));
+        } else {
+            $("#production_estimate").val("");
+        }
+    }
+
+    // Call the function whenever the inputs change
+    $("#yarn_totalweight, #yarn_model").on("input", calculateEstimatedProduction);
+});
 </script>
 
                 
