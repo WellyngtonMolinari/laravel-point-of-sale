@@ -70,8 +70,8 @@
             
             <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="total_weight" class="form-label">Peso de cada Cone em Kg</label>
-                            <input type="text" name="total_weight" id="total_weight" class="form-control" readonly>
+                            <label for="yarn_weightpunt" class="form-label">Peso de cada Cone em Kg</label>
+                            <input type="text" name="yarn_weightpunt" id="yarn_weightpunt" class="form-control" readonly>
                         </div>
                     </div>
 
@@ -239,7 +239,7 @@
 
             if (!isNaN(productionWeight) && !isNaN(productionStore)) {
                 const totalWeight = productionWeight / productionStore;
-                $("#total_weight").val(totalWeight.toFixed(3)); // Display the result with three decimal places
+                $("#yarn_weightpunt").val(totalWeight.toFixed(3)); // Display the result with three decimal places
             }
         }
 
