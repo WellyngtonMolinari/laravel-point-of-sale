@@ -293,6 +293,7 @@ Route::middleware(['auth'])->group(function()
         Route::get('/edit/yarn/{id}','EditYarn')->name('edit.yarn');
         Route::post('/update/yarn','UpdateYarn')->name('yarn.update');
         Route::get('/delete/yarn/{id}','DeleteYarn')->name('delete.yarn');
+        Route::get('/details/yarn/{id}','DetailsYarn')->name('details.yarn');
         
     });
 

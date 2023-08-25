@@ -49,12 +49,12 @@ class YarnController extends Controller
         'yarn_totalqtty' => $request->yarn_totalqtty,
         'yarn_weightpunt' => $request->yarn_weightpunt,
         'yarn_color' => $request->yarn_color,
-        'yarn_image' => $request->yarn_image,
         'yarn_garage' => $request->yarn_garage,
         'production_id' => $request->production_id,
         'production_estimate' => $request->production_estimate,
         'buying_date' => $request->buying_date,
         'buying_price' => $request->buying_price,
+        'yarn_image' => $save_url,
         'created_at' => Carbon::now(), 
 
     ]);
@@ -103,12 +103,12 @@ class YarnController extends Controller
                 'yarn_totalqtty' => $request->yarn_totalqtty,
                 'yarn_weightpunt' => $request->yarn_weightpunt,
                 'yarn_color' => $request->yarn_color,
-                'yarn_image' => $request->yarn_image,
                 'yarn_garage' => $request->yarn_garage,
                 'production_id' => $request->production_id,
                 'production_estimate' => $request->production_estimate,
                 'buying_date' => $request->buying_date,
                 'buying_price' => $request->buying_price,
+                'yarn_image' => $save_url,
                 'created_at' => Carbon::now(), 
             ]);
         } else {

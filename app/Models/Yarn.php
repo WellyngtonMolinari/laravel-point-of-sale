@@ -11,11 +11,11 @@ class Yarn extends Model
     protected $guarded = [];
 
     public function production(){
-        return $this->production(Production::class,'production_id','id');
+        return $this->belongsTo(Production::class,'production_id','id');
     }
 
     public function supplier(){
-        return $this->supplier(Supplier::class,'supplier_id','id');
+        return $this->belongsTo(Supplier::class,'supplier_id','id');
     }
 
     public function category(){

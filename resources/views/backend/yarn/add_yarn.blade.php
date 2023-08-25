@@ -2,6 +2,15 @@
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
+<style>
+#production_estimate,
+#yarn_weightpunt,
+#yarn_model {
+border-color: green; /* Border color when focused or unfocused */
+color: green; /* Text color */
+}
+</style>
+
  <div class="content">
 
                     <!-- Start Content-->
@@ -68,17 +77,19 @@
             </div>
         </div>
         
-                <div class="col-md-6">
-                    <div class="form-group mb-3">
-                        <label for="firstname" class="form-label">Modelo a Produzir</label>
-                        <select name="production_id" class="form-select" id="production-select">
-                            <option selected disabled>Selecionar Produção</option>
-                            @foreach($production as $prod)
-                                <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label for="firstname" class="form-label">Modelo a Produzir</label>
+                <select name="production_id" class="form-select" id="production-select">
+                    <option selected disabled>Selecionar Produção</option>
+                    <option value="0">Nenhum</option> <!-- New option -->
+                    @foreach($production as $prod)
+                        <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
@@ -280,9 +291,6 @@
                 yarn_totalqtty: {
                     required : true,
                 }, 
-                yarn_weightpunt: {
-                    required : true,
-                }, 
                 yarn_color: {
                     required : true,
                 }, 
@@ -295,9 +303,6 @@
                 production_id: {
                     required : true,
                 }, 
-                production_estimate: {
-                    required : true,
-                },  
                 buying_date: {
                     required : true,
                 },  
@@ -307,43 +312,37 @@
             },
             messages :{
                 yarn_name: {
-                    required : 'Please Enter Product Name',
+                    required : 'Adiciona o nome do fio!',
                 }, 
                 category_id: {
-                    required : 'Please Select Category',
+                    required : 'Adicione a categoria',
                 },
                 supplier_id: {
-                    required : 'Please Select Supplier',
+                    required : 'Adicione o fornecedor',
                 },
                 yarn_totalweight: {
-                    required : 'Please Enter Product Garage',
+                    required : 'Adicione o peso total',
                 },
                 yarn_totalqtty: {
-                    required : 'Please Enter Product Store',
-                },
-                yarn_weightpunt: {
-                    required : 'Please Slect Buying Date',
+                    required : 'Adicione a quantidade',
                 },
                 yarn_color: {
-                    required : 'Please Slect Expire Date',
+                    required : 'Adicione a cor',
                 },
                 yarn_image: {
-                    required : 'Please Enter Buying Price',
+                    required : 'Adicione a imagem',
                 },
                 yarn_garage: {
-                    required : 'Please Enter Selling Price',
+                    required : 'Adicione o Lote!',
                 },
                 production_id: {
-                    required : 'Please Select Product Image',
+                    required : 'Adicione algum modelo',
                 },
-                production_estimate: {
-                    required : 'Please Select Product Image',
-                }, 
                 buying_date: {
-                    required : 'Please Select Product Image',
+                    required : 'Adicione a data de compra!',
                 }, 
                 buying_price: {
-                    required : 'Please Select Product Image',
+                    required : 'Adicione a o valor da compra!',
                 },
             },
             errorElement : 'span', 
