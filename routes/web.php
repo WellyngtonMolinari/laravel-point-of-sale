@@ -15,6 +15,8 @@ use App\Http\Controllers\Backend\PosController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\ProductionController;
+use App\Http\Controllers\Backend\YarnController;
+
 
 /*
 |--------------------------------------------------------------------------

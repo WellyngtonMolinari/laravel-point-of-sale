@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Carbon\Carbon; 
 use App\Models\Category;
 use App\Models\Supplier;
+use App\Models\Production;
 use Illuminate\Support\Facades\File;
 
 
@@ -27,8 +28,8 @@ class YarnController extends Controller
     
         $category = Category::latest()->get();
         $supplier = Supplier::latest()->get();
-        // production too
-        return view('backend.yarn.add_yarn',compact('category','supplier'));
+        $production = Production::latest()->get();
+        return view('backend.yarn.add_yarn',compact('category','supplier','production'));
        }// End Method 
     
     
@@ -50,7 +51,7 @@ class YarnController extends Controller
             'yarn_color' => $request->yarn_color,
             'yarn_image' => $request->yarn_image,
             'yarn_garage' => $request->yarn_garage,
-            'production_model' => $request->production_model,
+            'production_id' => $request->production_id,
             'production_estimate' => $request->production_estimate,
             'buying_date' => $request->buying_date,
             'buying_price' => $request->buying_price,
@@ -71,7 +72,8 @@ class YarnController extends Controller
             $yarn = Yarn::findOrFail($id);
             $category = Category::latest()->get();
             $supplier = Supplier::latest()->get();
-            return view('backend.yarn.edit_yarn',compact('yarn','category','supplier'));
+            $production = Production::latest()->get();
+            return view('backend.yarn.edit_yarn',compact('yarn','category','supplier','production'));
     
         } // End Method 
     
@@ -94,32 +96,36 @@ class YarnController extends Controller
                 }
         
                 $yarn->update([
-                    'product_name' => $request->product_name,
+                    'yarn_name' => $request->yarn_name,
                     'category_id' => $request->category_id,
                     'supplier_id' => $request->supplier_id,
-                    'product_code' => $request->product_code,
-                    'product_garage' => $request->product_garage,
-                    'product_store' => $request->product_store,
+                    'yarn_totalweight' => $request->yarn_totalweight,
+                    'yarn_totalqtty' => $request->yarn_totalqtty,
+                    'yarn_weightpunt' => $request->yarn_weightpunt,
+                    'yarn_color' => $request->yarn_color,
+                    'yarn_image' => $request->yarn_image,
+                    'yarn_garage' => $request->yarn_garage,
+                    'production_id' => $request->production_id,
+                    'production_estimate' => $request->production_estimate,
                     'buying_date' => $request->buying_date,
-                    'expire_date' => $request->expire_date,
                     'buying_price' => $request->buying_price,
-                    'selling_price' => $request->selling_price,
-                    'product_image' => $save_url,
-                    'created_at' => Carbon::now(),
+                    'created_at' => Carbon::now(), 
                 ]);
             } else {
                 $yarn->update([
-                    'product_name' => $request->product_name,
+                    'yarn_name' => $request->yarn_name,
                     'category_id' => $request->category_id,
                     'supplier_id' => $request->supplier_id,
-                    'product_code' => $request->product_code,
-                    'product_garage' => $request->product_garage,
-                    'product_store' => $request->product_store,
+                    'yarn_totalweight' => $request->yarn_totalweight,
+                    'yarn_totalqtty' => $request->yarn_totalqtty,
+                    'yarn_weightpunt' => $request->yarn_weightpunt,
+                    'yarn_color' => $request->yarn_color,
+                    'yarn_garage' => $request->yarn_garage,
+                    'production_id' => $request->production_id,
+                    'production_estimate' => $request->production_estimate,
                     'buying_date' => $request->buying_date,
-                    'expire_date' => $request->expire_date,
                     'buying_price' => $request->buying_price,
-                    'selling_price' => $request->selling_price,
-                    'created_at' => Carbon::now(),
+                    'created_at' => Carbon::now(), 
                 ]);
             }
         

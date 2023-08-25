@@ -287,12 +287,12 @@
     <ul class="nav-second-level">
         @if(Auth::user()->can('production.all'))
         <li>
-            <a href="{{ route('all.production') }}">Lista de Fios</a>
+            <a href="{{ route('all.yarn') }}">Lista de Fios</a>
         </li>
         @endif
         @if(Auth::user()->can('production.add'))
          <li>
-            <a href="{{ route('add.production') }}">Adicionar Fios</a>
+            <a href="{{ route('add.yarn') }}">Adicionar Fios</a>
         </li>
         @endif
     </ul>

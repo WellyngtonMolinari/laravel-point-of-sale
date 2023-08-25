@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('yarn_color')->nullable();
             $table->string('yarn_image')->nullable();
             $table->string('yarn_garage')->nullable();
-            $table->string('production_model')->nullable();
+            $table->string('production_id')->nullable();
             $table->string('production_estimate')->nullable();
             $table->string('buying_date')->nullable();
             $table->string('buying_price')->nullable();
