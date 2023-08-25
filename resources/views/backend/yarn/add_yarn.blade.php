@@ -44,14 +44,36 @@
 
             <div class="row">
 
+                <div class="form-group col-md-6">
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label">Nome do Fio</label>
+                        <input type="text" name="yarn_name" class="form-control"   >
+            
+                    </div>
+                </div>
 
-    <div class="form-group col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Nome do Fio</label>
-            <input type="text" name="yarn_name" class="form-control"   >
-
-        </div>
-    </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="production_weight" class="form-label">Peso Total dos Fios em Kg (Exemplo: 20.350)</label>
+                        <input type="text" name="production_weight" id="production_weight" class="form-control" placeholder="20.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
+                    </div>
+                </div>
+            
+                    
+            
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="production_store" class="form-label">Quantidade de Cones</label>
+                            <input type="text" name="production_store" id="production_store" class="form-control" placeholder="Enter quantity" required>
+                        </div>
+                    </div>
+            
+            <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="total_weight" class="form-label">Peso de cada Cone em Kg</label>
+                            <input type="text" name="total_weight" id="total_weight" class="form-control" readonly>
+                        </div>
+                    </div>
 
 
               <div class="col-md-6">
@@ -93,45 +115,13 @@
         </div>
     </div>
 
-
-
-
-              {{-- <div class="col-md-6">
+    <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Code    </label>
-            <input type="text" name="product_code" class="form-control "   >
-
-           </div>
-        </div> --}}
-
-
-
-              <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Peso Total em Kg (Ex: 20.5)  </label>
-            <input type="text" name="yarn_totalweight" class="form-control "   >
+            <label for="firstname" class="form-label">Produção estimada em Peças</label>
+            <input type="text" name="production_estimate" class="form-control "   >
 
            </div>
         </div>
-
-
-              <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Quantidade de Cones    </label>
-            <input type="text" name="yarn_totalqtty" class="form-control "   >
-
-           </div>
-        </div>
-
-
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label for="firstname" class="form-label">Peso de cada Cone</label>
-                <input type="text" name="yarn_weightpunt" id="yarn_weightpunt" class="form-control" readonly>
-            </div>
-        </div>
-        
-
 
         <div class="form-group col-md-6">
             <div class="mb-3">
@@ -149,14 +139,6 @@
             </div>
         </div>
 
-
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label for="firstname" class="form-label">Produção estimada    </label>
-                <input type="text" name="production_estimate" class="form-control "   >
-    
-               </div>
-            </div>
 
 
 
@@ -225,25 +207,54 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
 <script type="text/javascript">
     $(document).ready(function () {
-        // Function to calculate "Peso de cada Cone"
-        function calculateWeightPerCone() {
-            const totalWeight = parseFloat($("#yarn_totalweight").val());
-            const coneQuantity = parseFloat($("#yarn_totalqtty").val());
+    //     // Function to calculate and update the profit
+    //     function calculateProfit() {
+    //         const costPrice = parseFloat($("#cost_price").val());
+    //         const sellingPrice = parseFloat($("#selling_price").val());
 
-            if (!isNaN(totalWeight) && !isNaN(coneQuantity) && coneQuantity !== 0) {
-                const weightPerCone = totalWeight / coneQuantity;
-                $("#yarn_weightpunt").val(weightPerCone.toFixed(3)); // Display the result with three decimal places
-            } else {
-                $("#yarn_weightpunt").val("");
+    //         if (!isNaN(costPrice) && !isNaN(sellingPrice)) {
+    //             const profit = sellingPrice - costPrice;
+    //             $("#profit_price").val(profit.toFixed(2)); // Display the profit with two decimal places
+    //         }
+    //     }
+
+    //     // Function to calculate and update the "Lucro x Quantidade" field
+    //     function calculateProfitQuantity() {
+    //         const profitPrice = parseFloat($("#profit_price").val());
+    //         const productionStore = parseFloat($("#production_store").val());
+
+    //         if (!isNaN(profitPrice) && !isNaN(productionStore)) {
+    //             const profitQuantity = profitPrice * productionStore;
+    //             $("#profit_quantity").val(profitQuantity.toFixed(2)); // Display the result with two decimal places
+    //         }
+    //     }
+
+        // Function to calculate and update the total weight
+        function calculateTotalWeight() {
+            const productionWeight = parseFloat($("#production_weight").val());
+            const productionStore = parseFloat($("#production_store").val());
+
+            if (!isNaN(productionWeight) && !isNaN(productionStore)) {
+                const totalWeight = productionWeight / productionStore;
+                $("#total_weight").val(totalWeight.toFixed(3)); // Display the result with three decimal places
             }
         }
 
-        // Call the function whenever the inputs change
-        $("#yarn_totalweight, #yarn_totalqtty").on("input", calculateWeightPerCone);
+        // Call the functions when the page loads (in case there are values pre-filled)
+        // calculateProfit();
+        // calculateProfitQuantity();
+        calculateTotalWeight();
+
+        // Call the functions whenever the inputs change
+        // $("#cost_price, #selling_price").on("input", calculateProfit);
+        // $("#profit_price, #production_store").on("input", calculateProfitQuantity);
+        $("#production_weight, #production_store").on("input", calculateTotalWeight);
     });
 </script>
+
                 
 
 <script type="text/javascript">
