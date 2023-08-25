@@ -104,14 +104,20 @@
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Modelo da Produção </label>
-            <select name="production_id" class="form-select" id="example-select">
-                    <option selected disabled >Selecionar Produção </option>
-                    @foreach($production as $prod)
-        <option value="{{ $prod->id }}">{{ $prod->name }}</option>
-                     @endforeach
-                </select>
+            <label for="firstname" class="form-label">Modelo da Produção</label>
+            <select name="production_id" class="form-select" id="production-select">
+                <option selected disabled>Selecionar Produção</option>
+                @foreach($production as $prod)
+                    <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
 
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label for="yarn_model" class="form-label">Peso do Modelo de Produção</label>
+            <input type="text" name="yarn_model" id="yarn_model" class="form-control" readonly>
         </div>
     </div>
 
@@ -210,48 +216,35 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-    //     // Function to calculate and update the profit
-    //     function calculateProfit() {
-    //         const costPrice = parseFloat($("#cost_price").val());
-    //         const sellingPrice = parseFloat($("#selling_price").val());
-
-    //         if (!isNaN(costPrice) && !isNaN(sellingPrice)) {
-    //             const profit = sellingPrice - costPrice;
-    //             $("#profit_price").val(profit.toFixed(2)); // Display the profit with two decimal places
-    //         }
-    //     }
-
-    //     // Function to calculate and update the "Lucro x Quantidade" field
-    //     function calculateProfitQuantity() {
-    //         const profitPrice = parseFloat($("#profit_price").val());
-    //         const productionStore = parseFloat($("#production_store").val());
-
-    //         if (!isNaN(profitPrice) && !isNaN(productionStore)) {
-    //             const profitQuantity = profitPrice * productionStore;
-    //             $("#profit_quantity").val(profitQuantity.toFixed(2)); // Display the result with two decimal places
-    //         }
-    //     }
 
         // Function to calculate and update the total weight
         function calculateTotalWeight() {
-            const productionWeight = parseFloat($("#yarn_totalweight").val());
-            const productionStore = parseFloat($("#yarn_totalqtty").val());
+            const yarnWeight = parseFloat($("#yarn_totalweight").val());
+            const yarnQtty = parseFloat($("#yarn_totalqtty").val());
 
-            if (!isNaN(productionWeight) && !isNaN(productionStore)) {
-                const totalWeight = productionWeight / productionStore;
+            if (!isNaN(yarnWeight) && !isNaN(yarnQtty)) {
+                const totalWeight = yarnWeight / yarnQtty;
                 $("#yarn_weightpunt").val(totalWeight.toFixed(3)); // Display the result with three decimal places
             }
         }
 
         // Call the functions when the page loads (in case there are values pre-filled)
-        // calculateProfit();
-        // calculateProfitQuantity();
         calculateTotalWeight();
 
         // Call the functions whenever the inputs change
-        // $("#cost_price, #selling_price").on("input", calculateProfit);
-        // $("#profit_price, #production_store").on("input", calculateProfitQuantity);
         $("#yarn_totalweight, #yarn_totalqtty").on("input", calculateTotalWeight);
+
+
+        $("#production-select").on("change", function () {
+            const selectedProductionId = $(this).val();
+            const selectedProductionWeight = $(this).find("option:selected").data("weight");
+            
+            if (selectedProductionWeight) {
+                $("#yarn_model").val(selectedProductionWeight);
+            } else {
+                $("#yarn_model").val("");
+            }
+        });
     });
 </script>
 
