@@ -54,8 +54,8 @@
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="production_weight" class="form-label">Peso Total dos Fios em Kg (Exemplo: 20.350)</label>
-                        <input type="text" name="production_weight" id="production_weight" class="form-control" placeholder="20.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
+                        <label for="yarn_totalweight" class="form-label">Peso Total dos Fios em Kg (Exemplo: 20.350)</label>
+                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="20.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
                     </div>
                 </div>
             
@@ -63,8 +63,8 @@
             
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label for="production_store" class="form-label">Quantidade de Cones</label>
-                            <input type="text" name="production_store" id="production_store" class="form-control" placeholder="Enter quantity" required>
+                            <label for="yarn_totalqtty" class="form-label">Quantidade de Cones</label>
+                            <input type="text" name="yarn_totalqtty" id="yarn_totalqtty" class="form-control" placeholder="Digite a quantidade" required>
                         </div>
                     </div>
             
@@ -234,8 +234,8 @@
 
         // Function to calculate and update the total weight
         function calculateTotalWeight() {
-            const productionWeight = parseFloat($("#production_weight").val());
-            const productionStore = parseFloat($("#production_store").val());
+            const productionWeight = parseFloat($("#yarn_totalweight").val());
+            const productionStore = parseFloat($("#yarn_totalqtty").val());
 
             if (!isNaN(productionWeight) && !isNaN(productionStore)) {
                 const totalWeight = productionWeight / productionStore;
@@ -251,7 +251,7 @@
         // Call the functions whenever the inputs change
         // $("#cost_price, #selling_price").on("input", calculateProfit);
         // $("#profit_price, #production_store").on("input", calculateProfitQuantity);
-        $("#production_weight, #production_store").on("input", calculateTotalWeight);
+        $("#yarn_totalweight, #yarn_totalqtty").on("input", calculateTotalWeight);
     });
 </script>
 
