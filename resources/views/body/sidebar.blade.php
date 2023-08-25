@@ -278,12 +278,12 @@
 
 @if(Auth::user()->can('production.menu'))
 <li>
-<a href="#production" data-bs-toggle="collapse">
+<a href="#yarn" data-bs-toggle="collapse">
     <i class="fa-solid fa-dolly"></i>
     <span> Controle de Fios  </span>
     <span class="menu-arrow"></span>
 </a>
-<div class="collapse" id="production">
+<div class="collapse" id="yarn">
     <ul class="nav-second-level">
         @if(Auth::user()->can('production.all'))
         <li>

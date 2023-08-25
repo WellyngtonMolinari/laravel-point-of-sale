@@ -52,15 +52,38 @@
                     </div>
                 </div>
 
+        <div class="form-group col-md-6">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Cor do Fio</label>
+                <input type="text" name="yarn_color" class="form-control"   >
+    
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Lote do Fio</label>
+                <input type="text" name="yarn_garage" class="form-control"   >
+    
+            </div>
+        </div>
+        
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="firstname" class="form-label">Modelo da Produção</label>
+                        <label for="firstname" class="form-label">Modelo a Produzir</label>
                         <select name="production_id" class="form-select" id="production-select">
                             <option selected disabled>Selecionar Produção</option>
                             @foreach($production as $prod)
                                 <option value="{{ $prod->id }}" data-weight="{{ $prod->production_weight }}">{{ $prod->production_name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="yarn_totalweight" class="form-label">Peso Total do Lote em Kg (Exemplo: 20.350)</label>
+                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="Somente números e ponto para separar as gramas" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
                     </div>
                 </div>
             
@@ -70,30 +93,23 @@
                         <input type="text" name="yarn_model" id="yarn_model" class="form-control" readonly>
                     </div>
                 </div>
-            
-                
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="yarn_totalweight" class="form-label">Peso Total dos Fios em Kg (Exemplo: 20.350)</label>
-                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="20.350" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
+                        <label for="yarn_totalqtty" class="form-label">Quantidade de Cones</label>
+                        <input type="text" name="yarn_totalqtty" id="yarn_totalqtty" class="form-control" placeholder="Digite a quantidade de cones" required>
                     </div>
                 </div>
                 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="firstname" class="form-label">Produção estimada em Peças</label>
+                        <label for="firstname" class="form-label">Produção estimada de Peças</label>
                         <input type="text" name="production_estimate" id="production_estimate" class="form-control" readonly>
                     </div>
                 </div>
                     
             
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="yarn_totalqtty" class="form-label">Quantidade de Cones</label>
-                            <input type="text" name="yarn_totalqtty" id="yarn_totalqtty" class="form-control" placeholder="Digite a quantidade" required>
-                        </div>
-                    </div>
+                    
             
             <div class="col-md-6">
                         <div class="mb-3">
@@ -131,24 +147,6 @@
 
 
 
-        <div class="form-group col-md-6">
-            <div class="mb-3">
-                <label for="firstname" class="form-label">Cor do Fio</label>
-                <input type="text" name="yarn_color" class="form-control"   >
-    
-            </div>
-        </div>
-
-        <div class="form-group col-md-6">
-            <div class="mb-3">
-                <label for="firstname" class="form-label">Lote do Fio</label>
-                <input type="text" name="yarn_garage" class="form-control"   >
-    
-            </div>
-        </div>
-
-
-
 
               <div class="col-md-6">
         <div class="form-group mb-3">
@@ -159,19 +157,13 @@
         </div>
 
 
-
-
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Preço de Compra  </label>
+            <label for="firstname" class="form-label">Valor Pago</label>
             <input type="text" name="buying_price" class="form-control "   >
 
            </div>
         </div>
-
-
-
-
 
 
    <div class="col-md-12">
@@ -248,14 +240,15 @@
             }
         });
 
-        // Function to calculate and update the estimated production
-        function calculateEstimatedProduction() {
+    // Function to calculate and update the estimated production
+    function calculateEstimatedProduction() {
         const yarnTotalWeight = parseFloat($("#yarn_totalweight").val());
         const yarnModelWeight = parseFloat($("#yarn_model").val());
 
         if (!isNaN(yarnTotalWeight) && !isNaN(yarnModelWeight) && yarnModelWeight !== 0) {
             const estimatedProduction = yarnTotalWeight / yarnModelWeight;
-            $("#production_estimate").val(estimatedProduction.toFixed(2));
+            const roundedProduction = Math.floor(estimatedProduction); // Round down to the nearest integer
+            $("#production_estimate").val(roundedProduction);
         } else {
             $("#production_estimate").val("");
         }
@@ -272,7 +265,7 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                product_name: {
+                yarn_name: {
                     required : true,
                 }, 
                 category_id: {
@@ -281,30 +274,39 @@
                 supplier_id: {
                     required : true,
                 }, 
-                product_garage: {
+                yarn_totalweight: {
                     required : true,
                 }, 
-                product_store: {
+                yarn_totalqtty: {
                     required : true,
                 }, 
-                buying_date: {
+                yarn_weightpunt: {
                     required : true,
                 }, 
-                expire_date: {
+                yarn_color: {
                     required : true,
                 }, 
-                buying_price: {
+                yarn_image: {
                     required : true,
                 }, 
-                selling_price: {
+                yarn_garage: {
                     required : true,
                 }, 
-                product_image: {
+                production_id: {
+                    required : true,
+                }, 
+                production_estimate: {
                     required : true,
                 },  
+                buying_date: {
+                    required : true,
+                },  
+                buying_price: {
+                    required : true,
+                },
             },
             messages :{
-                product_name: {
+                yarn_name: {
                     required : 'Please Enter Product Name',
                 }, 
                 category_id: {
@@ -313,27 +315,36 @@
                 supplier_id: {
                     required : 'Please Select Supplier',
                 },
-                product_garage: {
+                yarn_totalweight: {
                     required : 'Please Enter Product Garage',
                 },
-                product_store: {
+                yarn_totalqtty: {
                     required : 'Please Enter Product Store',
                 },
-                buying_date: {
+                yarn_weightpunt: {
                     required : 'Please Slect Buying Date',
                 },
-                expire_date: {
+                yarn_color: {
                     required : 'Please Slect Expire Date',
                 },
-                buying_price: {
+                yarn_image: {
                     required : 'Please Enter Buying Price',
                 },
-                selling_price: {
+                yarn_garage: {
                     required : 'Please Enter Selling Price',
                 },
-                product_image: {
+                production_id: {
+                    required : 'Please Select Product Image',
+                },
+                production_estimate: {
                     required : 'Please Select Product Image',
                 }, 
+                buying_date: {
+                    required : 'Please Select Product Image',
+                }, 
+                buying_price: {
+                    required : 'Please Select Product Image',
+                },
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
