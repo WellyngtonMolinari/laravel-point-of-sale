@@ -22,11 +22,11 @@ color: green; /* Text color */
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Adicionar Fio</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Editar Fio</a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Adicionar Fio</h4>
+                                    <h4 class="page-title">Editar Fio</h4>
                                 </div>
                             </div>
                         </div>     
@@ -51,7 +51,7 @@ color: green; /* Text color */
 
             <input type="hidden" name="id" value="{{ $yarn->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Adicionar Novo Estoque de Fio</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Estoque de Fio</h5>
 
             <div class="row">
 
@@ -100,8 +100,9 @@ color: green; /* Text color */
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="yarn_totalweight" class="form-label">Peso Total do Lote em Kg (Exemplo: 20.350)</label>
-                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350" value="{{ $yarn->yarn_totalweight }}">
+                        <label for="yarn_totalweight" class="form-label">Peso Total do Lote em Kg</label>
+                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" pattern="\d+(\.\d{1,3})?" title="Somente números e ponto para separar as gramas" value="{{ $yarn->yarn_totalweight }}">
+                        <span class="text-muted">Ex: "20.25"</span>
                     </div>
                 </div>
             
@@ -179,7 +180,7 @@ color: green; /* Text color */
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Valor Pago</label>
             <input type="text" name="buying_price" class="form-control " value="{{ $yarn->buying_price }}"  >
-
+            <span class="text-muted">Ex: "R$ 20.00"</span>
            </div>
         </div>
 

@@ -93,8 +93,9 @@ color: green; /* Text color */
 
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                        <label for="yarn_totalweight" class="form-label">Peso Total do Lote em Kg (Exemplo: 20.350)</label>
-                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="Somente números e ponto para separar as gramas" pattern="\d+(\.\d{1,3})?" title="Enter a valid weight in the format 20.350">
+                        <label for="yarn_totalweight" class="form-label">Peso Total do Lote em Kg</label>
+                        <input type="text" name="yarn_totalweight" id="yarn_totalweight" class="form-control" placeholder="Somente números e ponto para separar as gramas" pattern="\d+(\.\d{1,3})?" title="Separe as gramas com ponto">
+                        <span class="text-muted">Ex: "20.25"</span>
                     </div>
                 </div>
             
@@ -172,7 +173,7 @@ color: green; /* Text color */
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Valor Pago</label>
             <input type="text" name="buying_price" class="form-control "   >
-
+            <span class="text-muted">Ex: "R$ 20.00"</span>
            </div>
         </div>
 

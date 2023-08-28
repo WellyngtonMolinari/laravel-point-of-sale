@@ -12,6 +12,9 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
+                                            
+<a href="{{ route('stock.manage') }}" class="btn btn-success rounded-pill waves-effect waves-light">Estoque </a>  
+&nbsp;&nbsp;&nbsp;
 <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importar </a>  
 &nbsp;&nbsp;&nbsp;
 <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exportar </a>  

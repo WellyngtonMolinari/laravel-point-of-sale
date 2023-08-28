@@ -153,4 +153,11 @@ class YarnController extends Controller
         return redirect()->back()->with($notification); 
 
     } // End Method 
+
+    public function DetailsYarn($id){
+
+        $yarn = Yarn::findOrFail($id);
+        return view('backend.yarn.details_yarn',compact('yarn'));
+
+    } // End Method 
 }

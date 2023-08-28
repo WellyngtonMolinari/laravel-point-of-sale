@@ -16,7 +16,7 @@
       <a href="{{ route('add.yarn') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Adicionar Fio </a>  
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Todos Fios</h4>
+                                    <h4 class="page-title">Estoque de Fios</h4>
                                 </div>
                             </div>
                         </div>     
