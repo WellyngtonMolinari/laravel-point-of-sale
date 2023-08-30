@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
     <head>
         <meta charset="utf-8" />
-        <title>Login Page | TechMind Systems</title>
+        <title>Entrar | TechMind Systems</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -55,7 +55,7 @@
             <div class="mb-3">
                 <label for="login" class="form-label">Email/Nome/Celular</label>
 
-                <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Enter your login">
+                <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Digite suas credenciais">
 @error('login')
 <span class="text-danger"> {{ $message }} </span>
 @enderror
@@ -64,7 +64,7 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Senha</label>
                 <div class="input-group input-group-merge">
-                    <input type="password" id="password" name="password" class="form-control @error('login') is-invalid @enderror" placeholder="Enter your password">
+                    <input type="password" id="password" name="password" class="form-control @error('login') is-invalid @enderror" placeholder="Insira sua senha">
 @error('password')
 <span class="text-danger"> {{ $message }} </span>
 @enderror

@@ -38,7 +38,7 @@ class AttendenceController extends Controller
         }
 
          $notification = array(
-            'message' => 'Data Inseted Successfully',
+            'message' => 'Dados adicionados!',
             'alert-type' => 'success'
         );
 

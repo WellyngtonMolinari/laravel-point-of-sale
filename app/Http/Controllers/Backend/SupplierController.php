@@ -59,7 +59,7 @@ class SupplierController extends Controller
        ]);
 
         $notification = array(
-           'message' => 'Supplier Inserted Successfully',
+           'message' => 'Fornecedor Adicionado com Sucesso!',
            'alert-type' => 'success'
        );
 
@@ -105,7 +105,7 @@ class SupplierController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Supplier Updated Successfully',
+        'message' => 'Fornecedor Atualizado com Sucesso!',
         'alert-type' => 'success'
     );
 
@@ -131,7 +131,7 @@ class SupplierController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Supplier Updated Successfully',
+        'message' => 'Fornecedor Atualizado com Sucesso!',
         'alert-type' => 'success'
     );
 

@@ -42,7 +42,7 @@ class SalaryController extends Controller
             ]);
 
          $notification = array(
-            'message' => 'Advance Salary Paid Successfully',
+            'message' => 'Adiantamento Pago com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -52,7 +52,7 @@ class SalaryController extends Controller
         } else{
 
              $notification = array(
-            'message' => 'Advance Already Paid',
+            'message' => 'Adiantamento Já foi Pago!',
             'alert-type' => 'warning'
         );
 
@@ -90,7 +90,7 @@ class SalaryController extends Controller
             ]);
 
          $notification = array(
-            'message' => 'Advance Salary Updated Successfully',
+            'message' => 'Adiantamento Atualizado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -105,7 +105,7 @@ class SalaryController extends Controller
         AdvanceSalary::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'AdvanceSalary Deleted Successfully',
+            'message' => 'Adiantamento Deletado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -144,7 +144,7 @@ class SalaryController extends Controller
         ]);
 
        $notification = array(
-            'message' => 'Employee Salary Paid Successfully',
+            'message' => 'Salário do Funcionário Pago com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -170,7 +170,7 @@ class SalaryController extends Controller
         return view('backend.salary.history_salary', compact('historysalary'));
     } else {
         // Redirect or display an error message if no history found
-        return redirect()->route('pay.salary')->with('error', 'No salary history found for this employee.');
+        return redirect()->route('pay.salary')->with('error', 'Nenhum registro encontrado');
     }
 }
 

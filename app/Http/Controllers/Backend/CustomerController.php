@@ -65,7 +65,7 @@ class CustomerController extends Controller
         ]);
 
         $notification = [
-            'message' => 'Customer Inserted Successfully',
+            'message' => 'Cliente Adicionado com Sucesso!',
             'alert-type' => 'success',
         ];
 
@@ -109,7 +109,7 @@ class CustomerController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Customer Updated Successfully',
+        'message' => 'Cliente Atualizado com Sucesso!',
         'alert-type' => 'success'
     );
 
@@ -134,7 +134,7 @@ class CustomerController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Customer Updated Successfully',
+        'message' => 'Cliente Atualizado com Sucesso!',
         'alert-type' => 'success'
     );
 
@@ -158,7 +158,7 @@ class CustomerController extends Controller
         $customer->delete();
     
         $notification = [
-            'message' => 'Customer Deleted Successfully',
+            'message' => 'Cliente Deletado com Sucesso!',
             'alert-type' => 'success',
         ];
     

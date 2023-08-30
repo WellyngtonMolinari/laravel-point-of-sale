@@ -24,7 +24,7 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         $notification = array(
-            'message' => 'Admin Logout Successfully',
+            'message' => 'Saiu com Sucesso!',
             'alert-type' => 'info'
         );
 
@@ -63,7 +63,7 @@ class AdminController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Admin Profile Updated Successfully',
+            'message' => 'Perfil Atualizado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -87,7 +87,7 @@ class AdminController extends Controller
         if (!Hash::check($request->old_password, auth::user()->password))
         {
             $notification = array(
-                'message' => 'Old password doesnt match!',
+                'message' => 'As senhas não são iguais!',
                 'alert-type' => 'error'
             );
 
@@ -101,7 +101,7 @@ class AdminController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Password changed successfully!',
+            'message' => 'Trocou a senha com sucesso!',
             'alert-type' => 'success'
         );
         return back()->with($notification);
@@ -137,7 +137,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'New Admin User Created Successfully',
+            'message' => 'Novo Usuário Criado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -171,7 +171,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'Admin User Updated Successfully',
+            'message' => 'Usuário Atualizado!',
             'alert-type' => 'success'
         );
 
@@ -189,7 +189,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'Admin User Deleted Successfully',
+            'message' => 'Usuário Deletado!',
             'alert-type' => 'success'
         );
 
@@ -211,7 +211,7 @@ class AdminController extends Controller
             Artisan::call('backup:run');
 
             $notification = [
-                'message' => 'Database Backup Successfully',
+                'message' => 'Backup realizado!',
                 'alert-type' => 'success'
             ];
 
@@ -219,7 +219,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             // Handle the exception in case of any errors during the backup process
             $notification = [
-                'message' => 'Backup Failed: ' . $e->getMessage(),
+                'message' => 'Backup Falhou: ' . $e->getMessage(),
                 'alert-type' => 'error'
             ];
 
@@ -241,7 +241,7 @@ class AdminController extends Controller
         Storage::delete('TechMindSystem/'.$getFilename);
 
          $notification = array(
-            'message' => 'Database Deleted Successfully',
+            'message' => 'Database Deleteda',
             'alert-type' => 'success'
         );
 

@@ -53,7 +53,7 @@ class OrderController extends Controller
 
 
         $notification = array(
-            'message' => 'Order Complete Successfully',
+            'message' => 'Pedido Criado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -103,7 +103,7 @@ class OrderController extends Controller
      Order::findOrFail($order_id)->update(['order_status' => 'complete']);
 
          $notification = array(
-            'message' => 'Order Done Successfully',
+            'message' => 'Pedido Atualizado com Sucesso!',
             'alert-type' => 'success'
         ); 
 
@@ -167,7 +167,7 @@ class OrderController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Due Amount Updated Successfully',
+            'message' => 'Dívida Atualizada com Sucesso!',
             'alert-type' => 'success'
         ); 
 

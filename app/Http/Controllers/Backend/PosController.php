@@ -36,7 +36,7 @@ class PosController extends Controller
 
 
          $notification = array(
-            'message' => 'Product Added Successfully',
+            'message' => 'Produto Adicionado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -60,7 +60,7 @@ class PosController extends Controller
         $update = Cart::update($rowId,$qty);
 
          $notification = array(
-            'message' => 'Cart Updated Successfully',
+            'message' => 'Carrinho Atualizado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -74,7 +74,7 @@ class PosController extends Controller
         Cart::remove($rowId);
 
         $notification = array(
-            'message' => 'Cart Remove Successfully',
+            'message' => 'Produto Removido do Carrinho!',
             'alert-type' => 'success'
         );
 

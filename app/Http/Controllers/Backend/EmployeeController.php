@@ -62,7 +62,7 @@ class EmployeeController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Employee Inserted Successfully',
+            'message' => 'Funcionário Adicionado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -103,7 +103,7 @@ class EmployeeController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Employee Updated Successfully',
+            'message' => 'Funcionário Atualizado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -126,7 +126,7 @@ class EmployeeController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Employee Updated Successfully',
+            'message' => 'Funcionário Atualizado com Sucesso!',
             'alert-type' => 'success'
         );
 
@@ -145,7 +145,7 @@ class EmployeeController extends Controller
 
         Employee::findOrFail($id)->delete();
         $notification = array(
-            'message' => 'Employee Deleted Successfully',
+            'message' => 'Funcionário Deletado com Sucesso!',
             'alert-type' => 'success'
         );
 
