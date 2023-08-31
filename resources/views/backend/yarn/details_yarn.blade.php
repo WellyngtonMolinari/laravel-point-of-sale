@@ -71,7 +71,8 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Modelo a Produzir</label>
-            <p class="text-primary">{{ $yarn->production->production_name }}</p>
+            <p class="text-primary">{{ optional($yarn->production)->production_name }}</p>
+
         </div>
     </div>
 
@@ -85,9 +86,10 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Peso do Modelo de Produção</label>
-            <p class="text-primary">{{ $yarn->production->production_weight }}</p>
+            <p class="text-primary">{{ optional($yarn->production)->production_weight }}</p>
         </div>
     </div>
+    
 
     <div class="col-md-6">
         <div class="mb-3">

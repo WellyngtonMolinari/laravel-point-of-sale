@@ -171,9 +171,9 @@ color: green; /* Text color */
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Valor Pago</label>
+            <label for="firstname" class="form-label">Valor Pago (R$)</label>
             <input type="text" name="buying_price" class="form-control "   >
-            <span class="text-muted">Ex: "R$ 20.00"</span>
+            <span class="text-muted">Ex: "20.00"</span>
            </div>
         </div>
 
